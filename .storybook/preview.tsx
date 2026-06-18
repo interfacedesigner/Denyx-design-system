@@ -1,0 +1,64 @@
+import type { Preview } from '@storybook/react-vite';
+import { withThemeByClassName } from '@storybook/addon-themes';
+// No-Tailwind 내재화 CSS — 토큰(:root) + 유틸리티 클래스 + 키프레임 자체완결.
+// Tailwind 런타임 의존 0%. 소비자도 이 파일을 import.
+import '../src/denyx-ds.css';
+
+/**
+ * Storybook 10 preview — 모든 story 에 공통 적용되는 parameters / decorators.
+ *
+ * - layout: 'centered' — 대시보드 chrome 같이 큰 컴포넌트는 개별 story 에서 'fullscreen' 으로 override.
+ * - backgrounds: light(#fff) / surface-muted(#f5f5f5) / dark(#1a1a1a). prototype 에 자주 등장하는 배경 3종.
+ * - storySort: 카탈로그 좌측 트리 ordering — Introduction → Foundation → Tokens → Chrome → Denyx AI (Symbol/Context/Widget/Primitives/Cards) → Page(전체 페이지 합성 템플릿). 합성 위젯(FilterBar 등)은 Chrome 에 일원화.
+ */
+const preview: Preview = {
+  parameters: {
+    layout: 'centered',
+    backgrounds: {
+      // default 미지정 — 캔버스는 denyx-ds.css 의 body 배경(var(--color-bg))을 따르므로
+      // 우측 상단 Theme 토글(라이트/다크)이 배경까지 함께 전환한다. (수동 배경은 아래 값 유지)
+      values: [
+        { name: 'light', value: '#ffffff' },
+        { name: 'surface-muted', value: '#f5f5f5' },
+        { name: 'dark', value: '#1a1a1a' },
+      ],
+    },
+    controls: {
+      expanded: true, // argTypes description 을 기본 노출 — AI / 사용자 모두 prop 의미 즉시 확인 가능
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/i,
+      },
+    },
+    a11y: {
+      // 'todo' — a11y 위반만 표시, CI fail 시키지 않음. 추후 'error' 로 강화 가능.
+      test: 'todo',
+    },
+    options: {
+      storySort: {
+        order: [
+          'Introduction',
+          'Foundation',
+          ['Denyx Symbol'],
+          'Tokens',
+          ['Color', 'Type Scale', 'Font Weights', 'Line Heights', 'Tracking', 'Text Colors', 'Patterns', 'Korean vs Numeric', 'Typography', 'Tones (Semantic Intent)'],
+          'Chrome',
+          'Denyx AI',
+          ['Symbol', 'Context', 'Widget', 'Buttons', 'Input', 'Primitives', 'Cards'],
+          'Page',
+        ],
+      },
+    },
+  },
+  decorators: [
+    // 우측 상단 툴바에 Light/Dark 토글 추가 — <html> 에 `.dark` 클래스를 토글한다.
+    // denyx-ds.css 의 `.dark` 토큰이 cascade 되어 모든 story 가 다크로 전환된다.
+    withThemeByClassName({
+      themes: { light: '', dark: 'dark' },
+      defaultTheme: 'light',
+      parentSelector: 'html',
+    }),
+  ],
+};
+
+export default preview;

@@ -1,0 +1,36 @@
+# Denyx Design System — MCP 연결 빠른 안내
+
+Denyx 디자인 시스템은 Storybook MCP(`@storybook/addon-mcp`)로 AI 코딩 도구에 연결됩니다.
+이 도구로 AI가 이 DS 기준의 스토리 작성·컴포넌트 프리뷰·규약 조회를 수행합니다.
+
+## 엔드포인트 (권장 — 호스팅, dev 서버 불필요)
+
+    https://denyx-ds-mcp.vercel.app/mcp     (transport: streamable HTTP, 공개)
+
+DS 컴포넌트·토큰·코드·프리뷰 도구. 클론·설치·dev 서버 모두 불필요.
+
+## AI 클라이언트 등록 (호스팅)
+
+Claude Code:
+    claude mcp add --transport http denyx-ds https://denyx-ds-mcp.vercel.app/mcp
+
+Cursor — .cursor/mcp.json:
+    { "mcpServers": { "denyx-ds": { "url": "https://denyx-ds-mcp.vercel.app/mcp" } } }
+
+VS Code (Copilot) — .vscode/mcp.json:
+    { "servers": { "denyx-ds": { "type": "http", "url": "https://denyx-ds-mcp.vercel.app/mcp" } } }
+
+## 로컬 dev MCP (라이브 preview·story 작성·테스트 필요 시)
+
+    http://localhost:5181/mcp     (addon-mcp, `storybook dev` 실행 중에만)
+    git clone https://github.com/interfacedesigner/Denyx-design-system.git
+    cd Denyx-design-system && pnpm install && pnpm storybook   # 5181
+    claude mcp add --transport http denyx-ds-local http://localhost:5181/mcp
+
+## 3) 지식도 함께 주입 (권장)
+
+    curl https://denyx-design-system-storybook.vercel.app/design-system/DESIGN.md > denyx-ds.md
+
+## 전체 절차/설명
+
+    /design-system/AI-INTEGRATION.md  (또는 repo docs/AI-INTEGRATION.md)
