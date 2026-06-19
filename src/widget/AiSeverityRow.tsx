@@ -1,19 +1,28 @@
 import { TONE_DOT, TONE_BG, type Tone } from "./_tokens";
-import type { EventSeverity, EventRow } from "./AiEventList";
+
+export type EventSeverity = "critical" | "warning" | "info";
+
+export type EventRow = {
+  /** "14:32" 또는 "06/12 14:32" */
+  time: string;
+  severity: EventSeverity;
+  /** "server-prod-01", "oracle_dnx/RAC-1" */
+  source: string;
+  /** 한 줄 요약 메시지 */
+  message: string;
+};
 
 /**
- * EventListItem — [[AiEventList]] 의 단일 이벤트 행(`<li>`).
+ * AiSeverityRow — 심각도 기반 행(`<li>`).
  *
  * ## Purpose
- * 이벤트 한 건을 한 줄로 렌더 — 시간(고정폭) · 심각도 칩(도트 + 라벨) · 소스 + 메시지(truncate).
- * `AiEventList` 의 `rows.map(...)` 안에 인라인되어 있던 행 마크업을 그대로 추출한 것.
+ * 한 건을 한 줄로 렌더 — 시간(고정폭) · 심각도 칩(도트 + 라벨) · 소스 + 메시지(truncate).
  *
  * ## When to use
- * - [[AiEventList]] 가 `rows.map` 으로 항목마다 렌더 (기본 용법). 보통 단독 사용하지 않음.
+ * - 심각도(tone) 기반 행이 필요한 목록에서 항목마다 렌더.
  *
  * ## When NOT to use
- * - 카드 chrome / 헤딩 / 요약 줄 → 부모 [[AiEventList]] 가 책임.
- * - 이벤트가 아닌 다른 목록 항목 → 해당 위젯의 행 컴포넌트 사용.
+ * - 심각도가 아닌 다른 목록 항목 → 해당 위젯의 행 컴포넌트 사용.
  *
  * ## Composition rules
  * - 심각도 → Tone 매핑·라벨은 부모가 결정해 `tone` · `label` 로 주입 (이 컴포넌트는 표현용).
@@ -25,7 +34,7 @@ import type { EventSeverity, EventRow } from "./AiEventList";
  * @example
  * ```tsx
  * {rows.map((r, i) => (
- *   <EventListItem
+ *   <AiSeverityRow
  *     key={i}
  *     time={r.time}
  *     tone={SEVERITY_TONE[r.severity]}
@@ -37,7 +46,7 @@ import type { EventSeverity, EventRow } from "./AiEventList";
  * ))}
  * ```
  */
-export default function EventListItem({
+export default function AiSeverityRow({
   time,
   tone,
   label,
@@ -99,5 +108,3 @@ export default function EventListItem({
     </li>
   );
 }
-
-export type { EventSeverity, EventRow };

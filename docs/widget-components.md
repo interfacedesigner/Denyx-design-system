@@ -286,9 +286,9 @@ export type Choice = { label: string; hint?: string; onClick?: () => void };
 
 3개 이상 선택지가 필요한 경우는 `AiCriteriaSelection`을 쓰거나, 새 컴포넌트가 필요하다는 신호 — 디자인 시스템에 추가하기 전에 디자인 리뷰.
 
-### AiDashboardProposal
+### AiProposalCard
 
-대시보드 구성 제안. intro + 위치 안내 + 섹션들 + 마무리 질문.
+구성 제안 카드. intro + 위치 안내 + 섹션들 + 마무리 질문.
 
 ```ts
 export type ProposalSection = { emoji: string; title: string; bullets: string[] };
@@ -324,9 +324,9 @@ export type MigAction = { step: number; body: string };
 | `actions?: MigAction[]` | — |
 | `delay` | `0` |
 
-### AiAlertRulePreview
+### AiKeyValuePreview
 
-알림 규칙 등록 전 미리보기. 2컬럼 KV 테이블 + 참고 노트.
+KV 테이블 미리보기. 2컬럼 KV 테이블 + 참고 노트.
 
 ```ts
 export type AlertRuleField = { label: string; value: ReactNode };

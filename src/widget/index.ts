@@ -3,7 +3,7 @@
  *
  * AI 위젯 안에서 사용하는 토큰 / 프리미티브 / 메시지 카드 컴포넌트.
  * 외부 사용:
- *   import { AiCard, AiToneBadge, AiClassificationTable, TONE_DOT } from "@denyx/design-system/widget";
+ *   import { AiCard, AiToneBadge, TONE_DOT } from "@denyx/design-system/widget";
  */
 
 // Tokens — 신규 (의미 기반 단일 출처, AI-friendly description 포함)
@@ -49,25 +49,16 @@ export type {
 } from "./AiInlinePrompt";
 
 // Message cards
-export { default as AiAlertRulePreview } from "./AiAlertRulePreview";
+export { default as AiKeyValuePreview } from "./AiKeyValuePreview";
 export { default as AiChatExchange } from "./AiChatExchange";
 export { default as AiChoiceButtons } from "./AiChoiceButtons";
-export { default as AiClassificationTable } from "./AiClassificationTable";
 export { default as AiClickCursor } from "./AiClickCursor";
-export { default as AiCostBreakdown } from "./AiCostBreakdown";
-export { default as AiCostTable } from "./AiCostTable";
-export { default as AiCriteriaSelection } from "./AiCriteriaSelection";
-export { default as AiDashboardProposal } from "./AiDashboardProposal";
-export { default as AiEventList } from "./AiEventList";
-export type { EventRow, EventSeverity } from "./AiEventList";
+export { default as AiProposalCard } from "./AiProposalCard";
 export { default as AiExecutionResult } from "./AiExecutionResult";
 export { default as AiInsightSection } from "./AiInsightSection";
 export { default as AiLoadingMessage } from "./AiLoadingMessage";
 export { default as AiMessageActions } from "./AiMessageActions";
-export { default as AiMigPlan } from "./AiMigPlan";
 export { default as AiReasoning } from "./AiReasoning";
-export { default as AiReceiverChannels } from "./AiReceiverChannels";
-export type { ChannelKey, ChannelState } from "./AiReceiverChannels";
 export { default as AiStepsTimeline } from "./AiStepsTimeline";
 export { default as AiToolCallStep } from "./AiToolCallStep";
 export { default as AiUsageChart } from "./AiUsageChart";

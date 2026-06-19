@@ -1,28 +1,26 @@
 import type { CSSProperties } from "react";
 
 /**
- * CriteriaGroup — Part / Widget. [[AiCriteriaSelection]] 의 단일 분류 기준 그룹 행.
+ * AiToneRow — Part / Widget. tone 배경 + 도트 + 제목/상세 정보 행.
  *
  * ## Purpose
  * tone 별 배경 위에 좌측 컬러 도트 + 제목(bold) + 상세 설명을 세로로 쌓는 한 행.
- * `AiCriteriaSelection` 의 `groups.map(...)` 본문을 그대로 추출한 것 — 시각/동작 동일.
  *
  * ## When to use
- * - [[AiCriteriaSelection]] 가 `groups.map` 으로 기준마다 렌더 (기본 용법).
- * - 동일한 tone 배경 + 도트 + 제목/상세 행 외형이 필요한 다른 표면.
+ * - tone 배경 + 도트 + 제목/상세 행 외형이 필요한 표면.
  *
  * ## When NOT to use
- * - 선택 가능한 옵션 버튼 → [[CriteriaOptionButton]].
+ * - 선택 가능한 옵션 버튼 → [[AiOptionButton]].
  * - 단순 글머리 기호 목록 → 일반 `<ul>`/`<li>`.
  *
  * ## Composition rules
- * - tone 색은 부모(`AiCriteriaSelection`)의 `TONE_BG` / `TONE_DOT` 맵에서 풀어 `background` 로 주입 — 인라인 hex 신규 추가 금지.
+ * - tone 색은 부모의 `TONE_BG` / `TONE_DOT` 맵에서 풀어 `background` 로 주입 — 인라인 hex 신규 추가 금지.
  * - 데이터(title/detail)만 받는 표현용 행 — 상태 비보유.
  *
  * @example
  * ```tsx
  * {groups.map((g, i) => (
- *   <CriteriaGroup
+ *   <AiToneRow
  *     key={i}
  *     title={g.title}
  *     detail={g.detail}
@@ -32,7 +30,7 @@ import type { CSSProperties } from "react";
  * ))}
  * ```
  */
-export default function CriteriaGroup({
+export default function AiToneRow({
   title,
   detail,
   background,

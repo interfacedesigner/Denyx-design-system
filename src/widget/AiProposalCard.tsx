@@ -1,18 +1,18 @@
 /**
- * AiDashboardProposal — AI 가 제안하는 대시보드 구성 안내 카드.
+ * AiProposalCard — AI 가 제안하는 구성 안내 카드.
  *
  * ## Purpose
- * AI 가 만들 대시보드 구성을 사용자에게 **제안**하는 읽기 전용 카드. 인트로 본문 + 위치 안내
+ * AI 가 만들 구성을 사용자에게 **제안**하는 읽기 전용 카드. 인트로 본문 + 위치 안내
  * (이모지 + 라벨) + N개의 섹션(이모지 헤딩 + bullet 목록) + 끝맺음 확인 질문으로 구성됩니다.
- * 모든 데이터는 prop 으로 외부화되어 DB·APM·GPU 등 다른 컨텍스트에서도 재사용됩니다.
+ * 모든 데이터는 prop 으로 외부화되어 다양한 컨텍스트에서 재사용됩니다.
  *
  * ## When to use
- * - "이런 구성으로 대시보드를 만들까요?" 처럼 구성안을 섹션별로 제시하고 확인을 구하는 단계.
+ * - "이런 구성으로 만들까요?" 처럼 구성안을 섹션별로 제시하고 확인을 구하는 단계.
  * - 위치 안내(어느 메뉴/패널에 생기는지) + 섹션별 패널 목록을 함께 보여줄 때.
  *
  * ## When NOT to use
- * - 실제 대시보드 **생성/적용** 액션 → 이 카드는 제안 안내일 뿐, 확정 CTA 는 [[AiChoiceButtons]] 로 분리.
- * - 단순 KV 요약 표 → [[AiAlertRulePreview]].
+ * - 실제 **생성/적용** 액션 → 이 카드는 제안 안내일 뿐, 확정 CTA 는 [[AiChoiceButtons]] 로 분리.
+ * - 단순 KV 요약 표 → [[AiKeyValuePreview]].
  * - 실행 후 결과 통지 → [[AiExecutionResult]].
  *
  * ## Composition rules
@@ -22,7 +22,7 @@
  *
  * @example
  * ```tsx
- * <AiDashboardProposal
+ * <AiProposalCard
  *   intro="oracle_dnx 프로젝트에 RAC 지표 기반 대시보드를 제안합니다."
  *   locationHeading="📊"
  *   locationLabel="대시보드: 우측 → '인스턴스 모니터링'"
@@ -40,7 +40,7 @@ export type ProposalSection = {
   bullets: string[];
 };
 
-export default function AiDashboardProposal({
+export default function AiProposalCard({
   intro,
   locationHeading,
   locationLabel,

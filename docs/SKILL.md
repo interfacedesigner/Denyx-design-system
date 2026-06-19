@@ -92,7 +92,7 @@ Denyx Design System (@denyx/design-system)
 │                      SubHeaderBar / OptionbarPage / OptionbarInstanceSelector /
 │                      LiveTimerCompact / TimeRangeSelector / PresetSelect / Stage /
 │                      Toast / DataTable / FilterBar / MiniLineChart /
-│                      EventWeekTimeMatrix / Button / DashboardBuildingProgress
+│                      WeekHourMatrix / Button / DashboardBuildingProgress
 └─ Denyx AI         ─ 모든 AI 컴포넌트 (좌측 `Denyx AI/`)
     ├─ 빌딩 블록 5   ─ AiCard / AiCaption / AiSectionHeading / AiToneBadge / AiBulletList
     ├─ 진입 4        ─ AiAssistantButton / AiSendButton / AiInlinePrompt / AiPromptInput
@@ -191,7 +191,7 @@ export default function AiMyNewMessage({
 | [`GUIDE.md`](./GUIDE.md) | **비개발자 가이드** — 5단계 절차 + 프리셋 4종(코드+Prompt) + Prompt 예시 8개 + 검수 체크리스트 |
 | [`tokens.md`](./tokens.md) | `:root` 색·타입 스케일·웨이트·라인하이트·트래킹 + Tone 5 단계 + TONE_BG/DOT/LABEL |
 | [`primitives.md`](./primitives.md) | 14 종 — 일반 폼 (Checkbox · Tooltip · Chip · FilterChip · TextField · Select · Tabs · Modal · FilterDropdown) + AI 카드 빌딩 블록 (AiCard · AiCaption · AiSectionHeading · AiToneBadge · AiBulletList) |
-| [`chrome-components.md`](./chrome-components.md) | 19 종 — DashboardLayout · Sidebar · PageHeader · PageHeaderAiInline · Optionbar* · LiveTimerCompact · TimeRangeSelector · PresetSelect · Stage · Toast · AiSymbol · DataTable · FilterBar · MiniLineChart · EventWeekTimeMatrix · Button · DashboardBuildingProgress · DenyxAiContext |
+| [`chrome-components.md`](./chrome-components.md) | 19 종 — DashboardLayout · Sidebar · PageHeader · PageHeaderAiInline · Optionbar* · LiveTimerCompact · TimeRangeSelector · PresetSelect · Stage · Toast · AiSymbol · DataTable · FilterBar · MiniLineChart · WeekHourMatrix · Button · DashboardBuildingProgress · DenyxAiContext |
 | [`ai-entry.md`](./ai-entry.md) | AI 진입점 4 종 — AiAssistantButton · AiSendButton · AiInlinePrompt · AiPromptInput |
 | [`widget-components.md`](./widget-components.md) | DenyxAiWidget + 20 종 Ai* 메시지 카드 |
 | [`patterns.md`](./patterns.md) | 합성 패턴 + Do/Don't (사이드바 collapse · 헤더 invariant · 차트 정렬 · SVG 단위 · DataTable density · 타이포 위계 · AI 카테고리 분리 등) |

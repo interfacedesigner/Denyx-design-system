@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import CriteriaOptionButton from "../../src/widget/CriteriaOptionButton";
+import AiOptionButton from "../../src/widget/AiOptionButton";
 
-const meta: Meta<typeof CriteriaOptionButton> = {
-  title: "Primitives/CriteriaOptionButton",
-  component: CriteriaOptionButton,
+const meta: Meta<typeof AiOptionButton> = {
+  title: "Primitives/AiOptionButton",
+  component: AiOptionButton,
   tags: ["autodocs"],
   parameters: {
     layout: "padded",
@@ -11,7 +11,7 @@ const meta: Meta<typeof CriteriaOptionButton> = {
     docs: {
       description: {
         component:
-          "**선택 옵션 버튼 (part)** — [[AiCriteriaSelection]] 의 단일 CTA. selected(filled blue) / dimmed / pending(자동 클릭 손) / locked 상태.",
+          "**선택 옵션 버튼 (part)** — selected(filled blue) / dimmed / pending(자동 클릭 손) / locked 상태.",
       },
     },
   },
@@ -24,7 +24,7 @@ const meta: Meta<typeof CriteriaOptionButton> = {
   ],
 };
 export default meta;
-type Story = StoryObj<typeof CriteriaOptionButton>;
+type Story = StoryObj<typeof AiOptionButton>;
 
 export const Default: Story = {
   args: {

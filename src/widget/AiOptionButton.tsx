@@ -1,18 +1,17 @@
 import AiClickCursor from "./AiClickCursor";
 
 /**
- * CriteriaOptionButton — Part / Widget. [[AiCriteriaSelection]] 의 단일 선택 옵션 버튼.
+ * AiOptionButton — Part / Widget. 선택 옵션 버튼.
  *
  * ## Purpose
- * 기준 선택 CTA 한 개. 상태(selected / dimmed / pending)에 따라 filled blue 강조,
- * dim, 자동 클릭 손 인디케이터를 표현한다. `AiCriteriaSelection` 의 `options.map(...)`
- * 본문을 그대로 추출한 것 — 시각/동작 동일.
+ * 선택 CTA 한 개. 상태(selected / dimmed / pending)에 따라 filled blue 강조,
+ * dim, 자동 클릭 손 인디케이터를 표현한다.
  *
  * ## When to use
- * - [[AiCriteriaSelection]] 가 `options.map` 으로 옵션마다 렌더 (기본 용법).
+ * - 옵션 목록에서 항목마다 렌더.
  *
  * ## When NOT to use
- * - 정보성 기준 그룹 행(비-인터랙티브) → [[CriteriaGroup]].
+ * - 정보성 tone 행(비-인터랙티브) → [[AiToneRow]].
  * - 일반 2지선다 CTA → [[AiChoiceButtons]].
  *
  * ## Composition rules
@@ -27,7 +26,7 @@ import AiClickCursor from "./AiClickCursor";
  *   const isDimmed = selectedKey !== null && !isSelected;
  *   const isPending = pendingPick === o.key && !selectedKey;
  *   return (
- *     <CriteriaOptionButton
+ *     <AiOptionButton
  *       key={o.key}
  *       label={o.label}
  *       selected={isSelected}
@@ -40,7 +39,7 @@ import AiClickCursor from "./AiClickCursor";
  * })}
  * ```
  */
-export default function CriteriaOptionButton({
+export default function AiOptionButton({
   label,
   selected,
   dimmed,

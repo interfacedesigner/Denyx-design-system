@@ -32,15 +32,15 @@
 
 General: Button, Checkbox, Chip, DataTable, LiveTimerCompact, MiniLineChart, Modal, Select, Switch, Tabs, TextField, ThemeToggle, Toast, Tooltip
 
-Parts (Chrome): AiSymbol, BottomRailItem, DashboardBuildingProgress, DataTableRow, DateTimeBlock, EventWeekTimeMatrix, FilterChipItem, FilterDropdownOptionItem, HeaderPillButton, OptionbarInstanceSelector, OptionbarItem, OptionbarNewVersionButton, OptionbarValueDisplay, PageHeaderNotificationItem, PageHeaderProfileMenuItem, PresetSelect, ProductRailItem, SidebarCopyright, SidebarLogoHeader, SidebarMenuItem, SidebarOrgSwitcher, SidebarProjectSwitcher, Stage, SubHeaderBar, TabButton, TimeRangeSelector
+Parts (Chrome): AiSymbol, BottomRailItem, DashboardBuildingProgress, DataTableRow, DateTimeBlock, WeekHourMatrix, FilterChipItem, FilterDropdownOptionItem, HeaderPillButton, OptionbarInstanceSelector, OptionbarItem, OptionbarValueDisplay, PageHeaderNotificationItem, PageHeaderProfileMenuItem, PresetSelect, ProductRailItem, SidebarCopyright, SidebarLogoHeader, SidebarMenuItem, SidebarOrgSwitcher, SidebarProjectSwitcher, Stage, SubHeaderBar, TabButton, TimeRangeSelector
 
-Parts (AI): AiCard, AiCaption, AiSectionHeading, AiToneBadge, AiBulletList, AiActionChip, AiAttachmentChip, AiQuickActionChip, AiSendButton, AiAssistantButton, ReasoningStep, TimelineStepItem, CostBreakdownRow, ClassificationTableRow, CostTableRow, MigPlanRow, EventListItem, ReceiverChannelItem, CriteriaGroup, CriteriaOptionButton
+Parts (AI): AiCard, AiCaption, AiSectionHeading, AiToneBadge, AiBulletList, AiActionChip, AiAttachmentChip, AiQuickActionChip, AiSendButton, AiAssistantButton, ReasoningStep, TimelineStepItem, AiSeverityRow, AiToneRow, AiOptionButton, AiKeyValuePreview
 
 ### Composite — Primitives 만 1단계 조합. Composite 끼리 import 금지
 
-Chrome: PageHeader, PageHeaderAiInline, FilterBar, FilterChip, FilterDropdown, Sidebar, OptionbarPage
+Chrome: PageHeader, PageHeaderAiInline, FilterBar, FilterChip, FilterDropdown, Sidebar
 
-AI: AiInlinePrompt, AiChatExchange, AiPromptInput, AiReasoning, ProposalSection
+AI: AiInlinePrompt, AiChatExchange, AiPromptInput, AiReasoning, AiProposalCard, ProposalSection
 
 ### Shell — 모든 계층 조합. 앱 진입점 (2개)
 
