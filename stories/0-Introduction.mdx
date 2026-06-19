@@ -35,26 +35,26 @@ Primitives ──→ Composite ──→ Shell
 (자립 렌더)    (1단계 조합)    (최종 조립)
 ```
 
-### Primitives — 자립 렌더
+### Primitives — 자립 렌더 (유일하게 독립 생성 가능)
 
-다른 DS 컴포넌트를 import 하지 않고 **혼자서 렌더**되는 최소 단위. HTML 원소 + 토큰만으로 구성.
+다른 DS 컴포넌트를 import 하지 않고 **혼자서 렌더**되는 최소 단위. HTML 원소 + 토큰만으로 구성. **3계층 중 유일하게 독립 생성 가능.**
 
 - **판별:** "다른 DS 컴포넌트 import가 있는가?" → 없으면 Primitives.
 - **General:** Button · Checkbox · Chip · DataTable · Modal · Select · Tabs · TextField · Toast · Tooltip · Switch · ThemeToggle · LiveTimerCompact · MiniLineChart
 - **Parts (Chrome):** SidebarMenuItem · SidebarLogoHeader · DataTableRow · TabButton · HeaderPillButton · WeekHourMatrix · Stage · SubHeaderBar …
 - **Parts (AI):** AiCard · AiCaption · AiSectionHeading · AiToneBadge · AiBulletList · AiSendButton · AiAssistantButton · AiToneRow · AiOptionButton · AiSeverityRow …
 
-### Composite — 1단계 조합
+### Composite — 1단계 조합 (독립 생성 불가)
 
-Primitives를 조합하여 **영역 수준의 UI 단위**를 구성. **Composite 끼리 import 금지.**
+Primitives를 조합하여 **영역 수준의 UI 단위**를 구성. 독립 생성 불가 — 반드시 Primitives에 의존. **Composite 끼리 import 금지.**
 
 - **판별:** "Primitives만 조합했는가?" → 맞으면 Composite.
 - **Chrome:** PageHeader · PageHeaderAiInline · FilterBar · FilterChip · FilterDropdown · Sidebar
 - **AI:** AiInlinePrompt · AiChatExchange · AiPromptInput · AiReasoning · AiProposalCard · ProposalSection
 
-### Shell — 최종 조립
+### Shell — 최종 조립 (독립 생성 불가)
 
-Composite + Primitives를 **최종 조립**하는 앱 진입점. 한 화면의 전체 골격을 결정. Composite가 다른 Composite를 import하면 Shell로 승격.
+Composite + Primitives를 **최종 조립**하는 앱 진입점. 독립 생성 불가 — 반드시 하위 계층에 의존. Composite가 다른 Composite를 import하면 Shell로 승격.
 
 - **DashboardLayout** · **DenyxAiWidget** (2개)
 

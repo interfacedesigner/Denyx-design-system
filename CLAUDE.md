@@ -24,9 +24,9 @@ Primitives ──→ Composite ──→ Shell
 
 | 계층 | 정의 | import 규칙 | 판별 기준 |
 |---|---|---|---|
-| **Primitives** | 다른 DS 컴포넌트를 import 하지 않고 **자립 렌더**하는 최소 단위. HTML 원소 + 토큰만으로 구성. 범용 블록(Button, Modal)과 추출된 Parts(SidebarMenuItem, AiCard) 모두 포함. | DS import 없음. 토큰·React만 사용 | "이 컴포넌트에서 다른 DS 컴포넌트 import가 있는가?" → 없으면 Primitives |
-| **Composite** | Primitives를 **1단계 조합**하여 의미 있는 UI 단위를 구성. 페이지 헤더, 사이드바, 필터 바 등 영역 수준의 컴포넌트. | Primitives만 import. **Composite 끼리 import 금지** | "Primitives만 조합했는가?" → 맞으면 Composite |
-| **Shell** | Composite + Primitives를 **최종 조립**하는 앱 진입점. 한 화면의 전체 골격을 결정. | 모든 계층 import 가능 | "Composite를 포함하여 전체 화면을 조립하는가?" → 맞으면 Shell |
+| **Primitives** | 다른 DS 컴포넌트를 import 하지 않고 **자립 렌더**하는 최소 단위. HTML 원소 + 토큰만으로 구성. **3계층 중 유일하게 독립 생성 가능.** | DS import 없음. 토큰·React만 사용 | "이 컴포넌트에서 다른 DS 컴포넌트 import가 있는가?" → 없으면 Primitives |
+| **Composite** | Primitives를 **1단계 조합**하여 의미 있는 UI 단위를 구성. 독립 생성 불가 — 반드시 Primitives에 의존. | Primitives만 import. **Composite 끼리 import 금지** | "Primitives만 조합했는가?" → 맞으면 Composite |
+| **Shell** | Composite + Primitives를 **최종 조립**하는 앱 진입점. 독립 생성 불가 — 반드시 Composite + Primitives에 의존. | 모든 계층 import 가능 | "Composite를 포함하여 전체 화면을 조립하는가?" → 맞으면 Shell |
 
 **계층 승격 규칙:** Composite가 다른 Composite를 import하면 → Shell로 승격하거나 구조를 분리.
 
