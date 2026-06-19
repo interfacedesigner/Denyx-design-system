@@ -1,35 +1,47 @@
 <svg width="24" height="24" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <g transform="translate(8, 52)" stroke="#333333" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <!-- ═══ d letter: 3 concentric open arcs (right side open) + tail ═══ -->
-    <!-- d: outer arc (270°, open on right) -->
-    <path d="M68,40 A46,46 0 1,0 68,132" />
-    <!-- d: middle arc -->
-    <path d="M68,52 A34,34 0 1,0 68,120" />
-    <!-- d: inner arc -->
-    <path d="M68,64 A22,22 0 1,0 68,108" />
+  <!--
+    DNYX brand symbol — dnx rounded letterform, triple parallel strokes.
+    Manually traced from Figma Marketing/image 56 (node 4211:6).
+    Square container 240×240, logo centered.
+  -->
+  <g transform="translate(6, 62)" stroke="#333333" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round" fill="none">
 
-    <!-- d: tail curving up-right from top of d -->
-    <path d="M52,40 C52,16 72,6 92,6 C102,6 108,12 108,22" />
-    <path d="M56,52 C56,30 74,18 90,18 C98,18 102,22 102,30" />
-    <path d="M60,64 C62,46 76,34 88,34 C94,34 96,38 96,42" />
+    <!-- ══ d: three concentric arcs (open right ~300°) ══ -->
+    <path d="M72,30 A44,44 0 1,0 72,118" />
+    <path d="M72,42 A32,32 0 1,0 72,106" />
+    <path d="M72,54 A20,20 0 1,0 72,94" />
 
-    <!-- ═══ n letter: 3 parallel arch shapes ═══ -->
-    <!-- n: outer -->
-    <path d="M68,132 L68,46 C68,12 96,4 120,4 C144,4 172,12 172,46 L172,132" />
-    <!-- n: middle -->
-    <path d="M78,120 L78,52 C78,24 100,16 120,16 C140,16 162,24 162,52 L162,132" />
-    <!-- n: inner -->
-    <path d="M88,108 L88,60 C88,36 104,28 120,28 C136,28 152,36 152,60 L152,132" />
+    <!-- d: stem right (three verticals closing the arcs) -->
+    <line x1="72" y1="30" x2="72" y2="118" />
+    <line x1="72" y1="42" x2="72" y2="106" />
+    <line x1="72" y1="54" x2="72" y2="94" />
 
-    <!-- ═══ x letter: crossing diagonals with bottom roundover ═══ -->
-    <!-- x: top-left to bottom-right (3 parallel) -->
-    <path d="M152,40 L210,120 Q218,132 210,140" />
-    <path d="M162,40 L210,108 Q216,118 210,128" />
-    <path d="M172,40 L210,96 Q214,104 210,112" />
+    <!-- d: tail — curves from top of arc up-right, musical-note feel -->
+    <path d="M48,30 C48,10 68,0 86,0 C96,0 102,6 102,14" />
+    <path d="M52,42 C52,24 68,14 84,14 C92,14 96,18 96,24" />
+    <path d="M56,54 C58,40 70,32 82,32 C88,32 90,36 90,40" />
 
-    <!-- x: top-right to bottom-left (3 parallel) -->
-    <path d="M210,40 L152,120 Q144,132 152,140" />
-    <path d="M210,52 L162,120 Q156,128 162,136" />
-    <path d="M210,64 L172,108 Q168,114 172,120" />
+    <!-- ══ n: three parallel arch paths ══ -->
+    <!-- n outer: left vertical → arch → right vertical -->
+    <path d="M72,118 L72,34 C72,6 98,0 118,0 C138,0 164,6 164,34 L164,118" />
+    <!-- n middle -->
+    <path d="M82,106 L82,42 C82,18 100,12 118,12 C136,12 154,18 154,42 L154,118" />
+    <!-- n inner -->
+    <path d="M92,94 L92,50 C92,30 104,24 118,24 C132,24 144,30 144,50 L144,118" />
+
+    <!-- ══ x: crossing diagonals with bottom U-curve splay ══ -->
+    <!-- x: top-left → bottom-right (three parallel) -->
+    <path d="M144,30 L194,98 C200,108 196,118 188,118" />
+    <path d="M154,30 L196,88 C200,96 198,106 192,106" />
+    <path d="M164,30 L198,78 C200,84 200,92 196,94" />
+
+    <!-- x: top-right → bottom-left (three parallel) -->
+    <path d="M216,30 L166,98 C160,108 164,118 172,118" />
+    <path d="M206,30 L164,88 C160,96 162,106 168,106" />
+    <path d="M196,30 L162,78 C160,84 160,92 164,94" />
+
+    <!-- x: baseline connector (flat baseline shared with n) -->
+    <line x1="144" y1="118" x2="172" y2="118" />
+    <line x1="154" y1="106" x2="168" y2="106" />
   </g>
 </svg>

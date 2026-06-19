@@ -1,32 +1,43 @@
-<svg width="80" height="24" viewBox="0 0 320 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <g transform="translate(8, 6)" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <!-- d: outer arc -->
-    <path d="M52,30 A36,36 0 1,0 52,102" />
-    <!-- d: middle arc -->
-    <path d="M52,40 A26,26 0 1,0 52,92" />
-    <!-- d: inner arc -->
-    <path d="M52,50 A16,16 0 1,0 52,82" />
+<svg width="80" height="24" viewBox="0 0 340 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!--
+    DNYX brand logo — dnx symbol + DENYX wordmark.
+    Manually traced from Figma Marketing/image 56 (node 4211:6).
+  -->
+  <g transform="translate(4, 4)" stroke="#333333" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+
+    <!-- ══ d: three concentric arcs ══ -->
+    <path d="M54,22 A33,33 0 1,0 54,88" />
+    <path d="M54,31 A24,24 0 1,0 54,79" />
+    <path d="M54,40 A15,15 0 1,0 54,70" />
+
+    <!-- d: stem right -->
+    <line x1="54" y1="22" x2="54" y2="88" />
+    <line x1="54" y1="31" x2="54" y2="79" />
+    <line x1="54" y1="40" x2="54" y2="70" />
 
     <!-- d: tail -->
-    <path d="M40,30 C40,12 56,4 72,4 C80,4 84,8 84,16" />
-    <path d="M44,40 C44,24 58,16 70,16 C76,16 78,20 78,26" />
-    <path d="M48,50 C50,38 60,30 68,30 C72,30 74,34 74,38" />
+    <path d="M36,22 C36,7 51,0 65,0 C72,0 77,4 77,10" />
+    <path d="M39,31 C39,18 51,10 63,10 C69,10 72,14 72,18" />
+    <path d="M42,40 C44,30 53,24 62,24 C66,24 68,27 68,30" />
 
-    <!-- n -->
-    <path d="M52,102 L52,36 C52,10 76,2 94,2 C112,2 136,10 136,36 L136,102" />
-    <path d="M60,92 L60,42 C60,20 78,14 94,14 C110,14 128,20 128,42 L128,102" />
-    <path d="M68,82 L68,48 C68,30 82,24 94,24 C106,24 120,30 120,48 L120,102" />
+    <!-- ══ n: three arches ══ -->
+    <path d="M54,88 L54,26 C54,4 74,0 89,0 C104,0 124,4 124,26 L124,88" />
+    <path d="M62,79 L62,32 C62,14 76,9 89,9 C102,9 116,14 116,32 L116,88" />
+    <path d="M70,70 L70,38 C70,23 79,18 89,18 C99,18 108,23 108,38 L108,88" />
 
-    <!-- x -->
-    <path d="M120,30 L170,92 Q176,102 170,108" />
-    <path d="M128,30 L170,82 Q174,90 170,96" />
-    <path d="M136,30 L170,72 Q172,78 170,82" />
+    <!-- ══ x: crossing diagonals ══ -->
+    <path d="M108,22 L147,74 C151,80 149,88 143,88" />
+    <path d="M116,22 L149,66 C151,72 150,79 146,79" />
+    <path d="M124,22 L151,58 C152,63 151,70 149,70" />
 
-    <path d="M170,30 L120,92 Q114,102 120,108" />
-    <path d="M170,40 L128,92 Q124,98 128,104" />
-    <path d="M170,50 L136,82 Q134,86 136,90" />
+    <path d="M164,22 L125,74 C121,80 123,88 129,88" />
+    <path d="M156,22 L123,66 C121,72 122,79 126,79" />
+    <path d="M148,22 L121,58 C120,63 121,70 123,70" />
+
+    <line x1="108" y1="88" x2="129" y2="88" />
+    <line x1="116" y1="79" x2="126" y2="79" />
   </g>
 
   <!-- DENYX wordmark -->
-  <text x="200" y="72" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="28" font-weight="700" letter-spacing="2" fill="#333333">DENYX</text>
+  <text x="195" y="68" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="700" letter-spacing="2.5" fill="#333333">DENYX</text>
 </svg>
