@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import {
-  DashboardLayout, PageHeader, OptionbarPage,
+  DashboardLayout, PageHeader,
   DataTable, Chip, DenyxAiWidget,
 } from "@denyx/design-system";
 import type { DataTableColumn } from "@denyx/design-system/DataTable";
@@ -10,7 +10,7 @@ import type { DataTableColumn } from "@denyx/design-system/DataTable";
  * **프리셋 A — 기본 대시보드.**
  *
  * 가장 일반적인 Denyx 모니터링 페이지 패턴.
- * Sidebar + PageHeader + OptionbarPage + DataTable + AI 위젯.
+ * Sidebar + PageHeader + DataTable + AI 위젯.
  *
  * `docs/GUIDE.md` "프리셋 A" 코드 템플릿과 1:1 대응.
  */
@@ -71,9 +71,9 @@ const meta: Meta = {
     docs: {
       description: {
         component:
-          "**프리셋 A — 기본 대시보드.** Sidebar + PageHeader + OptionbarPage + DataTable + DenyxAiWidget.\n\n" +
+          "**프리셋 A — 기본 대시보드.** Sidebar + PageHeader + DataTable + DenyxAiWidget.\n\n" +
           "가장 기본적인 모니터링 페이지 뼈대. `docs/GUIDE.md` 프리셋 A 참조.\n\n" +
-          "**포함 컴포넌트:** DashboardLayout · PageHeader · OptionbarPage · DataTable · Chip · DenyxAiWidget\n\n" +
+          "**포함 컴포넌트:** DashboardLayout · PageHeader · DataTable · Chip · DenyxAiWidget\n\n" +
           "**AI 위젯 토글:** 헤더의 Denyx AI 버튼 클릭 → 사이드바 240→40px 축소 + 우측 위젯 패널.",
       },
     },
@@ -101,11 +101,7 @@ export const Example: StoryObj = {
                 aiActive={aiActive}
                 onAiToggle={() => setAiActive((v) => !v)}
               />
-              <OptionbarPage
-                instanceLabel="gpu-prod-01"
-                instanceStatus="ok"
-                databaseLabel="GPU-A100"
-              />
+              <div className="flex items-center gap-8px h-32px px-12px text-base text-secondary">Options area</div>
             </>
           }
           main={

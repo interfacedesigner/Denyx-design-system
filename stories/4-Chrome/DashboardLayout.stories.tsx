@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { DashboardLayout, PageHeader, OptionbarPage } from "@denyx/design-system";
+import { DashboardLayout, PageHeader } from "@denyx/design-system";
 
 /**
  * Stories for [[DashboardLayout]] — 페이지 chrome (Sidebar + 컨텐츠).
@@ -74,7 +74,7 @@ export const WithOptionbar: Story = {
     header: (
       <>
         <PageHeader title="DB / oracle_dnx" />
-        <OptionbarPage instanceLabel="DMX-3-12-949" instanceStatus="ok" databaseLabel="ORA11K" />
+        <div className="flex items-center gap-8px h-32px px-12px text-base text-secondary">Options area</div>
       </>
     ),
     main: SampleMain,

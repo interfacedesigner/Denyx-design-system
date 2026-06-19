@@ -6,14 +6,14 @@
 
 > **Enterprise 시나리오 신규 정책/prop**(2026-06): `Sidebar`(`MenuItem.children[].onClick`, `OrgContext.badge`, 아이콘-없음 12px 스페이서) · `PageHeader`(`profileMenu`, `roleBadge`=드롭다운 헤더, `notifications` 벨 인디케이터) · `SubHeaderBar` · 토큰 색상/48px 헤더/사용자 메뉴 일원화/컨텍스트 정합성 정책 → **[`enterprise-changes.md`](./enterprise-changes.md)** 참조.
 
-**조립 순서:** `DashboardLayout` → `Sidebar` + `header` 슬롯 (`PageHeader` 또는 `PageHeaderAiInline` + 옵션으로 `OptionbarPage` 또는 `FilterBar`) + `main` 슬롯 + 자식으로 `DenyxAiWidget`
+**조립 순서:** `DashboardLayout` → `Sidebar` + `header` 슬롯 (`PageHeader` 또는 `PageHeaderAiInline` + 옵션으로 `FilterBar`) + `main` 슬롯 + 자식으로 `DenyxAiWidget`
 
 ## 카탈로그 (20)
 
 | 영역 | 컴포넌트 |
 |---|---|
 | 레이아웃 | DashboardLayout · Sidebar · PageHeader · PageHeaderAiInline · SubHeaderBar |
-| 옵션바 (시간/인스턴스/프리셋) | OptionbarPage · OptionbarInstanceSelector · LiveTimerCompact · TimeRangeSelector · PresetSelect |
+| 옵션바 (시간/인스턴스/프리셋) | OptionbarInstanceSelector · LiveTimerCompact · TimeRangeSelector · PresetSelect |
 | 데이터 표시 | DataTable · FilterBar · MiniLineChart · WeekHourMatrix |
 | 액션·진입 | Button · AiSymbol |
 | 알림·상태 | Toast · Stage · DashboardBuildingProgress |
@@ -28,7 +28,7 @@
 | Prop | Type | Default | 설명 |
 |---|---|---|---|
 | `children` | `ReactNode` | — | 보통 `<DenyxAiWidget>` 등 floating 자식 |
-| `header` | `ReactNode` | — | 상단 헤더 슬롯 (`PageHeader` + `OptionbarPage`) |
+| `header` | `ReactNode` | — | 상단 헤더 슬롯 (`PageHeader`) |
 | `main` | `ReactNode` | — | 본문 슬롯 |
 | `widgetOpen` | `boolean` | `false` | true면 사이드바가 40px 레일로 축소 ([patterns.md](./patterns.md#2-sidebar-collapse-on-widget-open)) |
 | `activeProduct` | `string` | — | 현재 활성 제품 (사이드바 강조용) |
@@ -150,24 +150,9 @@ inline prompt 는 `max-w-[480px]` cap — 우측 chrome (고객지원·bell·ava
 
 ---
 
-## OptionbarPage
+## ~~OptionbarPage~~ (삭제됨)
 
-옵션바 통합 헤더 (PageHeader 바로 아래에 배치). 시간/인스턴스/DB/프리셋 + NewVersion 버튼.
-
-| Prop | Type | Default |
-|---|---|---|
-| `liveTime` | `string` | — |
-| `durationLabel` | `string` | `"10분"` |
-| `paused` | `boolean` | `false` |
-| `onTogglePause` | `() => void` | — |
-| `instanceLabel` | `string` | `"DMX-3-12-949"` |
-| `instanceStatus` | `InstanceStatus` | `"ok"` |
-| `databaseLabel` | `string` | `"ORA11K"` |
-| `newVersionHref` | `string` | `"#"` |
-| `newVersionLabel` | `string` | `"신규 버전"` |
-| `presetLabel` | `string` | `"Default"` |
-
-내부적으로 `OptionbarInstanceSelector` + `LiveTimerCompact` + `PresetSelect`를 조합합니다. 보통은 이 컴포넌트 하나만 쓰면 충분하고, 옵션바를 세부 커스터마이즈해야 할 때만 하위 셋을 직접 import 합니다.
+> `OptionbarPage`는 삭제되었습니다. 옵션바가 필요한 경우 `OptionbarInstanceSelector` + `LiveTimerCompact` + `PresetSelect`를 직접 조합하세요.
 
 ---
 
@@ -225,7 +210,7 @@ type DateParts = { year: string; month: string; day: string; hour: string; minut
 | `onNext` | `() => void` | — |
 | `onPickDate` | `() => void` | — |
 
-`OptionbarPage`가 `LiveTimerCompact`를 쓰고 있으니, 별도 시간 입력 UI가 필요한 페이지에서만 `TimeRangeSelector`를 직접 씁니다.
+별도 시간 입력 UI가 필요한 페이지에서만 `TimeRangeSelector`를 직접 씁니다.
 
 ---
 

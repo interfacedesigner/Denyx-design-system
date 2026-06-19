@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import {
-  DashboardLayout, PageHeader, OptionbarPage,
+  DashboardLayout, PageHeader,
   Tabs, MiniLineChart,
   DataTable, DenyxAiWidget,
 } from "@denyx/design-system";
@@ -11,7 +11,7 @@ import type { DataTableColumn } from "@denyx/design-system/DataTable";
  * **프리셋 D — 상세 페이지.**
  *
  * 단일 대상(인스턴스·서버)을 탭으로 나눠 심층 분석하는 패턴.
- * Sidebar + PageHeader + OptionbarPage + Tabs + MiniLineChart 그리드 + DataTable + AI 위젯.
+ * Sidebar + PageHeader + Tabs + MiniLineChart 그리드 + DataTable + AI 위젯.
  *
  * `docs/GUIDE.md` "프리셋 D" 코드 템플릿과 1:1 대응.
  */
@@ -103,9 +103,9 @@ const meta: Meta = {
     docs: {
       description: {
         component:
-          "**프리셋 D — 상세 페이지.** Sidebar + PageHeader + OptionbarPage + Tabs + MiniLineChart 그리드 + DataTable + DenyxAiWidget.\n\n" +
+          "**프리셋 D — 상세 페이지.** Sidebar + PageHeader + Tabs + MiniLineChart 그리드 + DataTable + DenyxAiWidget.\n\n" +
           "인스턴스 상세, 서버 상세 등 하나의 대상을 탭으로 나눠 깊이 있게 보여주는 패턴.\n\n" +
-          "**포함 컴포넌트:** DashboardLayout · PageHeader · OptionbarPage · Tabs · MiniLineChart · DataTable · DenyxAiWidget\n\n" +
+          "**포함 컴포넌트:** DashboardLayout · PageHeader · Tabs · MiniLineChart · DataTable · DenyxAiWidget\n\n" +
           "**핵심 기능:** 탭 전환(개요/성능/이벤트) + 차트 2x2 그리드 + 시계열 테이블 + AI 위젯 토글.",
       },
     },
@@ -134,11 +134,7 @@ export const Example: StoryObj = {
                 aiActive={aiActive}
                 onAiToggle={() => setAiActive((v) => !v)}
               />
-              <OptionbarPage
-                instanceLabel="DMX-3-12-949"
-                instanceStatus="ok"
-                databaseLabel="ORA11K"
-              />
+              <div className="flex items-center gap-8px h-32px px-12px text-base text-secondary">Options area</div>
             </>
           }
           main={
