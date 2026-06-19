@@ -23,11 +23,9 @@ const PROTOCOL_VERSION = "2025-03-26";
 
 /** Resolve the base URL for fetching static assets from the same deployment. */
 function getBaseUrl(req: VercelRequest): string {
-  // In Vercel deployments, VERCEL_URL is the deployment URL (no protocol).
-  // Fallback to the Host header for local dev / custom domains.
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL}`;
-  }
+  // Use the incoming Host header — this is the production alias or custom domain
+  // the client actually hit. VERCEL_URL points to a unique deployment URL that
+  // may require authentication, so we avoid it.
   const host = req.headers.host ?? "localhost:3000";
   const proto = host.startsWith("localhost") ? "http" : "https";
   return `${proto}://${host}`;
