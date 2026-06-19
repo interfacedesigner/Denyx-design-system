@@ -81,6 +81,20 @@ Tokens는 leaf(누구도 import 안 함). 상위 계층이 하위만 import. 자
 
 ---
 
+## 🔒 불변 정책 — DS repo에서만 수정 가능
+
+> **이 정책은 불변(immutable)입니다. 예외 없음.**
+
+모든 토큰 · 컴포넌트 · 위젯의 추가 · 변경 · 삭제는 **본 repo(`Denyx-design-system`)에서만** 수행합니다. 소비자 레이어(프로토타입, 시나리오, 제품 코드)에서의 **override · 재정의 · CSS 덮어쓰기 · 토큰 값 변경**은 금지합니다.
+
+**위반 감지 (2중 경고):**
+- **런타임:** DS 컴포넌트 override 시도 시 `<DsReadOnlyNotice>` 모달이 불변 정책을 안내합니다.
+- **빌드/lint:** 소비자 repo에서 `node scripts/ds-override-guard.mjs src/` 실행 시 DS 토큰 재정의, `!important` 덮어쓰기, DS 클래스명 직접 스타일링을 감지하여 경고합니다.
+
+변경이 필요하면 [DS repo에 Issue를 등록](https://github.com/interfacedesigner/Denyx-design-system/issues)하거나 담당 디자이너에게 문의하세요.
+
+---
+
 ## 5 핵심 규칙
 
 이 5가지만 지키면 디자인 시스템의 80%를 따른 것입니다. 자세한 근거는 [patterns.md](/design-system/patterns.md).
