@@ -68,10 +68,10 @@
 
 | # | Story | 조립 부품 | 상태 | 비고 |
 |---|---|---|---|---|
-| 1 | **Preset A: 기본 대시보드** | DashboardLayout + PageHeader + OptionbarPage + DataTable + DenyxAiWidget | ✅ 완료 | 가장 기본. Sidebar 메뉴 + AI 위젯 토글 포함 |
+| 1 | **Preset A: 기본 대시보드** | DashboardLayout + PageHeader + DataTable + DenyxAiWidget | ✅ 완료 | 가장 기본. Sidebar 메뉴 + AI 위젯 토글 포함 |
 | 2 | **Preset B: AI 전용 페이지** | DashboardLayout + PageHeaderAiInline + DenyxAiWidget | ✅ 완료 | 롤링 placeholder + suggestion chip 데모 |
 | 3 | **Preset C: 목록 페이지** | DashboardLayout + PageHeader + FilterBar + DataTable | ✅ 완료 | 검색 + 드롭다운 필터 + 선택 칩 + 초기화 |
-| 4 | **Preset D: 상세 페이지** | DashboardLayout + PageHeader + OptionbarPage + Tabs + MiniLineChart 그리드 + DataTable | ✅ 완료 | 탭 전환 + 차트 2x2 + 하단 테이블 |
+| 4 | **Preset D: 상세 페이지** | DashboardLayout + PageHeader + Tabs + MiniLineChart 그리드 + DataTable | ✅ 완료 | 탭 전환 + 차트 2x2 + 하단 테이블 |
 
 **Story 위치**: `stories/7-Presets/PresetA-Dashboard.stories.tsx` ~ `PresetD-Detail.stories.tsx`
 

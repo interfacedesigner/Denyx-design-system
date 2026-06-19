@@ -106,7 +106,7 @@ export type ProjectContext = {
  * GPU 노드만 펼친 상태이며 자식 중 "GPU 트렌드"가 active.
  * Sidebar의 default — prop으로 다른 메뉴 데이터를 주입해 재활용 가능.
  */
-export const K8S_GPU_MENU: MenuItem[] = [
+const K8S_GPU_MENU: MenuItem[] = [
   { icon: "menu-dashboard.svg", label: "대시보드", children: [] },
   { icon: "menu-openmetrics.svg", label: "OpenMetrics", children: [] },
   { icon: "menu-cluster.svg", label: "클러스터", children: [] },

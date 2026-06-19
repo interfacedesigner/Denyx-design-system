@@ -89,7 +89,7 @@ Denyx Design System (@denyx/design-system)
 │                      Tabs / Modal / FilterDropdown
 ├─ Chrome (20)       ─ 페이지 레벨 레이아웃·도구·표시
 │                      DashboardLayout / Sidebar / PageHeader / PageHeaderAiInline /
-│                      SubHeaderBar / OptionbarPage / OptionbarInstanceSelector /
+│                      SubHeaderBar / OptionbarInstanceSelector /
 │                      LiveTimerCompact / TimeRangeSelector / PresetSelect / Stage /
 │                      Toast / DataTable / FilterBar / MiniLineChart /
 │                      WeekHourMatrix / Button / DashboardBuildingProgress
@@ -136,7 +136,6 @@ Chrome / Denyx AI → Primitives → Tokens
 import {
   DashboardLayout,
   PageHeader,
-  OptionbarPage,
   DenyxAiWidget,
   useDenyxAi,
 } from "@denyx/design-system";
@@ -149,10 +148,7 @@ export default function MyNewPage() {
       widgetOpen={aiActive}
       activeProduct="db"
       header={
-        <>
-          <PageHeader title="My New Page" aiActive={aiActive} onAiToggle={() => setAiActive(!aiActive)} />
-          <OptionbarPage />
-        </>
+        <PageHeader title="My New Page" aiActive={aiActive} onAiToggle={() => setAiActive(!aiActive)} />
       }
       main={<MyContent />}
     >
