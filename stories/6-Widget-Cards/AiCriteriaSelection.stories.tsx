@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AiCriteriaSelection } from "@denyx/design-system/widget";
 
 const meta: Meta<typeof AiCriteriaSelection> = {
-  title: "Denyx AI/Cards/AiCriteriaSelection",
+  title: "Composite/AiCriteriaSelection",
   component: AiCriteriaSelection,
   tags: ["autodocs"],
   parameters: {

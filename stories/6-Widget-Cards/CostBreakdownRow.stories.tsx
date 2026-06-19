@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import CostBreakdownRow from "../../src/widget/CostBreakdownRow";
 
 const meta: Meta<typeof CostBreakdownRow> = {
-  title: "Denyx AI/Parts/CostBreakdownRow",
+  title: "Primitives/CostBreakdownRow",
   component: CostBreakdownRow,
   tags: ["autodocs"],
   parameters: {

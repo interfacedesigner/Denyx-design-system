@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AiClassificationTable } from "@denyx/design-system/widget";
 
 const meta: Meta<typeof AiClassificationTable> = {
-  title: "Denyx AI/Cards/AiClassificationTable",
+  title: "Composite/AiClassificationTable",
   component: AiClassificationTable,
   tags: ["autodocs"],
   parameters: {

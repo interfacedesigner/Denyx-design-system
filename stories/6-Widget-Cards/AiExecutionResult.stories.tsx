@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AiExecutionResult } from "@denyx/design-system/widget";
 
 const meta: Meta<typeof AiExecutionResult> = {
-  title: "Denyx AI/Cards/AiExecutionResult",
+  title: "Primitives/AiExecutionResult",
   component: AiExecutionResult,
   tags: ["autodocs"],
   parameters: {

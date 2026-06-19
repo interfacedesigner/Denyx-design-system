@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import CriteriaOptionButton from "../../src/widget/CriteriaOptionButton";
 
 const meta: Meta<typeof CriteriaOptionButton> = {
-  title: "Denyx AI/Parts/CriteriaOptionButton",
+  title: "Primitives/CriteriaOptionButton",
   component: CriteriaOptionButton,
   tags: ["autodocs"],
   parameters: {

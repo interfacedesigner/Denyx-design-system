@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AiClickCursor } from "@denyx/design-system/widget";
 
 const meta: Meta<typeof AiClickCursor> = {
-  title: "Denyx AI/Cards/AiClickCursor",
+  title: "Primitives/AiClickCursor",
   component: AiClickCursor,
   tags: ["autodocs"],
   parameters: {

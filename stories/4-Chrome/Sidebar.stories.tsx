@@ -6,7 +6,7 @@ import type { MenuItem, ProjectContext } from "@denyx/design-system/Sidebar";
  * Stories for [[Sidebar]] — Denyx SaaS 좌측 240px 사이드바.
  */
 const meta: Meta<typeof Sidebar> = {
-  title: "Chrome/Sidebar",
+  title: "Composite/Sidebar",
   component: Sidebar,
   tags: ["autodocs"],
   parameters: {

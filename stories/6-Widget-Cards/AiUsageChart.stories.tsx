@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AiUsageChart } from "@denyx/design-system/widget";
 
 const meta: Meta<typeof AiUsageChart> = {
-  title: "Denyx AI/Cards/AiUsageChart",
+  title: "Primitives/AiUsageChart",
   component: AiUsageChart,
   tags: ["autodocs"],
   parameters: {

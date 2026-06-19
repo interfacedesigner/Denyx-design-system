@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import AiAttachmentChip from "../../src/widget/AiAttachmentChip";
 
 const meta: Meta<typeof AiAttachmentChip> = {
-  title: "Denyx AI/Parts/AiAttachmentChip",
+  title: "Primitives/AiAttachmentChip",
   component: AiAttachmentChip,
   tags: ["autodocs"],
   parameters: {

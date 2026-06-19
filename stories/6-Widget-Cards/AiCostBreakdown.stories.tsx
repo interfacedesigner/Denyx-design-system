@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AiCostBreakdown } from "@denyx/design-system/widget";
 
 const meta: Meta<typeof AiCostBreakdown> = {
-  title: "Denyx AI/Cards/AiCostBreakdown",
+  title: "Composite/AiCostBreakdown",
   component: AiCostBreakdown,
   tags: ["autodocs"],
   parameters: {

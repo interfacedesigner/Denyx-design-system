@@ -4,8 +4,8 @@
 
 ## 디렉토리 구성
 
-- `src/` — 컴포넌트 소스 + `tokens.css` + `widget/` (AI 카테고리)
-- `stories/` — Storybook 카탈로그 (Tokens / Primitives / Chrome / Denyx AI 카테고리)
+- `src/` — 컴포넌트 소스 + `tokens.css` + `widget/` (AI 컴포넌트)
+- `stories/` — Storybook 카탈로그 (Foundation / Tokens / Primitives / Composite / Shell / Page)
 - `docs/` — markdown 카탈로그 (단일 출처 문서)
   - `SKILL.md` — 본 디자인 시스템 사용 절차
   - `primitives.md` / `chrome-components.md` / `widget-components.md` — 컴포넌트 카탈로그 (텍스트 형태)
@@ -13,22 +13,9 @@
   - `patterns.md` — 합성 패턴 (페이지 레벨 컴포지션)
   - `STORIES_ROADMAP.md` — Storybook 카탈로그 추가 작업 목록
 
-## 카테고리 분리 — Primitives · Chrome · Denyx AI
+## 컴포넌트 계층 — Primitives → Composite → Shell
 
-| 카테고리 | 폴더 | 예 |
-|---|---|---|
-| Primitives | `src/` 루트 | Button, TextField, Select, Chip, FilterChip, Tabs, Modal, Tooltip, Checkbox |
-| Chrome | `src/` 루트 | DashboardLayout, PageHeader, PageHeaderAiInline, Sidebar, FilterBar, DataTable, FilterDropdown |
-| Denyx AI | `src/widget/` | **모든 AI 컴포넌트의 집** — 빌딩 블록(AiCard, AiCaption, AiSectionHeading, AiToneBadge, AiBulletList) · 진입(AiInlinePrompt, AiPromptInput, AiSendButton, AiAssistantButton) · 위젯 셸(DenyxAiWidget, DenyxAiContext, AiSymbol) · 메시지 카드(AiReasoning, AiChatExchange …). Storybook 트리 `Denyx AI/` 로 통일. (단 `PageHeaderAiInline` 은 헤더 레이아웃이라 Chrome 유지) |
-| Tokens | `src/tokens.css` | `:root` 컬러·폰트·spacing 변수 (참조용; 런타임은 denyx-ds.css) |
-
-**AI 영역 ↔ 일반 영역 분리 원칙**
-
-- AI 진입점·AI 응답 UI 는 **`Ai...` 카테고리만** 사용 (AiInlinePrompt / AiSendButton / AiAssistantButton)
-- 일반 폼/검색은 TextField·Button
-- 페이지의 AI 진입점은 **버튼 대신 AiInlinePrompt 직접 주입 (2-step → 1-step)**
-
-## 아키텍처 — 2-Tier Token + 3-Layer Component
+단일 축(Design Theory) 계층. 조합 깊이가 유일한 분류 기준.
 
 ### 토큰 2계층
 
@@ -41,21 +28,31 @@
 - Component 토큰(3계층)은 variant×tone 조합이 복잡한 것만 선택 도입 (`--wds-btn-*`).
 - `--color-palette-*` (hex suffix) 는 차트 시리즈 전용 Global. 컴포넌트에서 직접 참조 가능 (차트 한정).
 
-### 컴포넌트 3계층 — Foundation · Composite · Shell
+### Primitives — 자립 렌더. DS 컴포넌트를 import 하지 않음
 
-| Layer | 역할 | 조합 규칙 | 수량 |
-|---|---|---|---|
-| **Foundation** | 단독 렌더. 다른 DS 컴포넌트를 import 하지 않음 | — | ~57 |
-| **Composite** | Foundation 을 1단계 조합 | Foundation 만 import. **Composite 끼리 import 금지** | ~18 |
-| **Shell** | Composite + Foundation 을 최종 조립하는 진입점 | 모든 계층 import 가능 | 2 |
+General: Button, Checkbox, Chip, DataTable, LiveTimerCompact, MiniLineChart, Modal, Select, Switch, Tabs, TextField, ThemeToggle, Toast, Tooltip
 
-**Foundation** — Checkbox, Chip, TextField, Select, Tabs, Modal, Tooltip, Toast, Button, DataTable, MiniLineChart, LiveTimerCompact, SidebarMenuItem, AiCard … + **인라인 추출 Parts**(SidebarMenuItem · PageHeaderNotificationItem · PageHeaderProfileMenuItem · ProductRailItem · BottomRailItem · TabButton · CostBreakdownRow · ClassificationTableRow · CostTableRow · MigPlanRow · EventListItem · ReasoningStep · TimelineStepItem · CriteriaGroup · AiActionChip · AiAttachmentChip · AiQuickActionChip)
+Parts (Chrome): AiSymbol, BottomRailItem, DashboardBuildingProgress, DataTableRow, DateTimeBlock, EventWeekTimeMatrix, FilterChipItem, FilterDropdownOptionItem, HeaderPillButton, OptionbarInstanceSelector, OptionbarItem, OptionbarNewVersionButton, OptionbarValueDisplay, PageHeaderNotificationItem, PageHeaderProfileMenuItem, PresetSelect, ProductRailItem, SidebarCopyright, SidebarLogoHeader, SidebarMenuItem, SidebarOrgSwitcher, SidebarProjectSwitcher, Stage, SubHeaderBar, TabButton, TimeRangeSelector
 
-**Composite** — FilterBar · PageHeader · OptionbarPage · Sidebar(=SidebarMenuItem) · AiInlinePrompt · AiChatExchange … + **추출 Parts**(DataTableRow · FilterDropdownOptionItem · FilterChipItem · CriteriaOptionButton · ReceiverChannelItem · ProposalSection)
+Parts (AI): AiCard, AiCaption, AiSectionHeading, AiToneBadge, AiBulletList, AiActionChip, AiAttachmentChip, AiQuickActionChip, AiSendButton, AiAssistantButton, ReasoningStep, TimelineStepItem, CostBreakdownRow, ClassificationTableRow, CostTableRow, MigPlanRow, EventListItem, ReceiverChannelItem, CriteriaGroup, CriteriaOptionButton
 
-**Shell** — DashboardLayout(=Sidebar), DenyxAiWidget (2개)
+### Composite — Primitives 만 1단계 조합. Composite 끼리 import 금지
+
+Chrome: PageHeader, PageHeaderAiInline, FilterBar, FilterChip, FilterDropdown, Sidebar, OptionbarPage
+
+AI: AiInlinePrompt, AiChatExchange, AiPromptInput, AiReasoning, ProposalSection
+
+### Shell — 모든 계층 조합. 앱 진입점 (2개)
+
+DashboardLayout, DenyxAiWidget
 
 **신규 컴포넌트 추가 시 반드시 계층을 명시.** Composite 가 다른 Composite 를 import 하면 Shell 로 승격하거나 구조 분리.
+
+**AI 영역 ↔ 일반 영역 분리 원칙** (계층과 무관한 네이밍 규칙)
+
+- AI 진입점·AI 응답 UI 는 **`Ai...` 접두사** 사용 (AiInlinePrompt / AiSendButton / AiAssistantButton)
+- 일반 폼/검색은 TextField·Button
+- 페이지의 AI 진입점은 **버튼 대신 AiInlinePrompt 직접 주입 (2-step → 1-step)**
 
 ### 🔒 글로벌 정책 — 구조는 인라인 금지 (컴포넌트로 추출)
 
@@ -64,7 +61,7 @@
 - 새 구조 단위를 인라인으로 만들기 전에 **컴포넌트로 추출 가능한지 먼저 검토** — 추출이 기본.
 - 추출된 컴포넌트는 계층 명시 + docstring(4섹션) + story + `index.ts` export + 카탈로그 동기.
 - 인라인 허용은 **재사용 없는 1회성 레이아웃 래퍼**(flex 컨테이너 등)에 한함.
-- **적용 현황(2026-06-17):** 위젯·chrome 의 반복 인라인 구조 23종을 컴포넌트로 추출 완료 — 카탈로그는 `Chrome/Parts/*` · `Denyx AI/Parts/*` 하위에 등록(`index.ts` export + story). 테이블 행·스텝·칩·메뉴 항목 등.
+- **적용 현황(2026-06-17):** 반복 인라인 구조 23종을 Primitives Parts 로 추출 완료 — `index.ts` export + story. 테이블 행·스텝·칩·메뉴 항목 등.
 
 ## 스타일 — 일반 CSS (Tailwind 미사용 · 흔적 0)
 

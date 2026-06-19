@@ -5,7 +5,7 @@ import { AiCard, AiToneBadge } from "@denyx/design-system/widget";
  * Stories for [[AiToneBadge]] — 분류 결과 컬러 칩.
  */
 const meta: Meta<typeof AiToneBadge> = {
-  title: "Denyx AI/Primitives/AiToneBadge",
+  title: "Primitives/AiToneBadge",
   component: AiToneBadge,
   tags: ["autodocs"],
   parameters: {

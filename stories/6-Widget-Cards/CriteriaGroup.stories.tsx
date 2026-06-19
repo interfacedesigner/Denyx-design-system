@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import CriteriaGroup from "../../src/widget/CriteriaGroup";
 
 const meta: Meta<typeof CriteriaGroup> = {
-  title: "Denyx AI/Parts/CriteriaGroup",
+  title: "Primitives/CriteriaGroup",
   component: CriteriaGroup,
   tags: ["autodocs"],
   parameters: {

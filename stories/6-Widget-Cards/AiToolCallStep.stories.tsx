@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AiToolCallStep } from "@denyx/design-system/widget";
 
 const meta: Meta<typeof AiToolCallStep> = {
-  title: "Denyx AI/Cards/AiToolCallStep",
+  title: "Primitives/AiToolCallStep",
   component: AiToolCallStep,
   tags: ["autodocs"],
   parameters: {

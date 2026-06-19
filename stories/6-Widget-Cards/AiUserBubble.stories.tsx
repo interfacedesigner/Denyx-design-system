@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AiUserBubble } from "@denyx/design-system/widget";
 
 const meta: Meta<typeof AiUserBubble> = {
-  title: "Denyx AI/Cards/AiUserBubble",
+  title: "Primitives/AiUserBubble",
   component: AiUserBubble,
   tags: ["autodocs"],
   parameters: {

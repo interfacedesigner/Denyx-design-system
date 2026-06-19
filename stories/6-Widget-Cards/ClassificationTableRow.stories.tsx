@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import ClassificationTableRow from "../../src/widget/ClassificationTableRow";
 
 const meta: Meta<typeof ClassificationTableRow> = {
-  title: "Denyx AI/Parts/ClassificationTableRow",
+  title: "Primitives/ClassificationTableRow",
   component: ClassificationTableRow,
   tags: ["autodocs"],
   parameters: {

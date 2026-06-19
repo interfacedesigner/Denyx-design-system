@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AiPromptInput } from "@denyx/design-system/widget";
 
 const meta: Meta<typeof AiPromptInput> = {
-  title: "Denyx AI/Input/PromptInput",
+  title: "Composite/AiPromptInput",
   component: AiPromptInput,
   tags: ["autodocs"],
   parameters: {
