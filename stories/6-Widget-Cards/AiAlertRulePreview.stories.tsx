@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AiAlertRulePreview } from "@denyx/design-system/widget";
 
 const meta: Meta<typeof AiAlertRulePreview> = {
-  title: "Denyx AI/Cards/AiAlertRulePreview",
+  title: "Composite/AiAlertRulePreview",
   component: AiAlertRulePreview,
   tags: ["autodocs"],
   parameters: {

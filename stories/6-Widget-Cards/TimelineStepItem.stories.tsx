@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import TimelineStepItem from "../../src/widget/TimelineStepItem";
 
 const meta: Meta<typeof TimelineStepItem> = {
-  title: "Denyx AI/Parts/TimelineStepItem",
+  title: "Primitives/TimelineStepItem",
   component: TimelineStepItem,
   tags: ["autodocs"],
   parameters: {

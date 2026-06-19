@@ -5,7 +5,7 @@ import { AiSymbol } from "@denyx/design-system";
  * Stories for [[AiSymbol]] — Denyx AI pinwheel symbol with gradient.
  */
 const meta: Meta<typeof AiSymbol> = {
-  title: "Denyx AI/Symbol",
+  title: "Primitives/AiSymbol",
   component: AiSymbol,
   tags: ["autodocs"],
   parameters: {

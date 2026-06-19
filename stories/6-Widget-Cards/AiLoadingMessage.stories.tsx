@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AiLoadingMessage } from "@denyx/design-system/widget";
 
 const meta: Meta<typeof AiLoadingMessage> = {
-  title: "Denyx AI/Cards/AiLoadingMessage",
+  title: "Primitives/AiLoadingMessage",
   component: AiLoadingMessage,
   tags: ["autodocs"],
   parameters: {

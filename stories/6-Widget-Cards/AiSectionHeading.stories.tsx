@@ -5,7 +5,7 @@ import { AiCard, AiSectionHeading } from "@denyx/design-system/widget";
  * Stories for [[AiSectionHeading]] — 카드 메인 헤딩 (도트/이모지 + 굵은 한국어).
  */
 const meta: Meta<typeof AiSectionHeading> = {
-  title: "Denyx AI/Primitives/AiSectionHeading",
+  title: "Primitives/AiSectionHeading",
   component: AiSectionHeading,
   tags: ["autodocs"],
   parameters: {

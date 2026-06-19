@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import AiQuickActionChip from "../../src/AiQuickActionChip";
 
 const meta: Meta<typeof AiQuickActionChip> = {
-  title: "Denyx AI/Parts/AiQuickActionChip",
+  title: "Primitives/AiQuickActionChip",
   component: AiQuickActionChip,
   tags: ["autodocs"],
   parameters: {

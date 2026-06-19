@@ -7,7 +7,7 @@ import { AiCard, AiCaption } from "@denyx/design-system/widget";
  * 11px 굵은 회색 대문자 라벨. 카드 안의 sub-section 머리에 붙여 영역 분류 명시.
  */
 const meta: Meta<typeof AiCaption> = {
-  title: "Denyx AI/Primitives/AiCaption",
+  title: "Primitives/AiCaption",
   component: AiCaption,
   tags: ["autodocs"],
   parameters: {

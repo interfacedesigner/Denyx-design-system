@@ -9,7 +9,7 @@ import '../src/denyx-ds.css';
  *
  * - layout: 'centered' — 대시보드 chrome 같이 큰 컴포넌트는 개별 story 에서 'fullscreen' 으로 override.
  * - backgrounds: light(#fff) / surface-muted(#f5f5f5) / dark(#1a1a1a). prototype 에 자주 등장하는 배경 3종.
- * - storySort: 카탈로그 좌측 트리 ordering — Introduction → Foundation → Tokens → Chrome → Denyx AI (Symbol/Context/Widget/Primitives/Cards) → Page(전체 페이지 합성 템플릿). 합성 위젯(FilterBar 등)은 Chrome 에 일원화.
+ * - storySort: 카탈로그 좌측 트리 ordering — Introduction → Foundation → Tokens → Primitives → Composite → Shell → Page. 단일 Design Theory 계층(Primitives→Composite→Shell).
  */
 const preview: Preview = {
   parameters: {
@@ -42,9 +42,9 @@ const preview: Preview = {
           ['Denyx Symbol'],
           'Tokens',
           ['Color', 'Type Scale', 'Font Weights', 'Line Heights', 'Tracking', 'Text Colors', 'Patterns', 'Korean vs Numeric', 'Typography', 'Tones (Semantic Intent)'],
-          'Chrome',
-          'Denyx AI',
-          ['Symbol', 'Context', 'Widget', 'Buttons', 'Input', 'Primitives', 'Cards'],
+          'Primitives',
+          'Composite',
+          'Shell',
           'Page',
         ],
       },

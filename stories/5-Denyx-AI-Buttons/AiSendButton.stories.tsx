@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AiSendButton } from "@denyx/design-system/widget";
 
 const meta: Meta<typeof AiSendButton> = {
-  title: "Denyx AI/Buttons/SendButton",
+  title: "Primitives/AiSendButton",
   component: AiSendButton,
   tags: ["autodocs"],
   parameters: {

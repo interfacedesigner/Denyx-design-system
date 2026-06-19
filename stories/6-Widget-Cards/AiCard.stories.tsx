@@ -14,7 +14,7 @@ import {
  * 각 story 의 `args` 가 autodocs 의 Controls 패널에 노출되어 인터랙티브 조정 가능.
  */
 const meta: Meta<typeof AiCard> = {
-  title: "Denyx AI/Primitives/AiCard",
+  title: "Primitives/AiCard",
   component: AiCard,
   tags: ["autodocs"],
   parameters: {

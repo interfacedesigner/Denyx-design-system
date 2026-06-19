@@ -5,7 +5,7 @@ import { AiCard, AiSectionHeading, AiBulletList } from "@denyx/design-system/wid
  * Stories for [[AiBulletList]] — 위젯 본문의 통일 bullet list.
  */
 const meta: Meta<typeof AiBulletList> = {
-  title: "Denyx AI/Primitives/AiBulletList",
+  title: "Primitives/AiBulletList",
   component: AiBulletList,
   tags: ["autodocs"],
   parameters: {

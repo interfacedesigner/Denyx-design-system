@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import EventListItem from "../../src/widget/EventListItem";
 
 const meta: Meta<typeof EventListItem> = {
-  title: "Denyx AI/Parts/EventListItem",
+  title: "Primitives/EventListItem",
   component: EventListItem,
   tags: ["autodocs"],
   parameters: {

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AiChatExchange } from "@denyx/design-system/widget";
 
 const meta: Meta<typeof AiChatExchange> = {
-  title: "Denyx AI/Cards/AiChatExchange",
+  title: "Composite/AiChatExchange",
   component: AiChatExchange,
   tags: ["autodocs"],
   parameters: {

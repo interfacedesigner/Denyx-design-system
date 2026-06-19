@@ -4,7 +4,7 @@ import { AiReceiverChannels } from "@denyx/design-system/widget";
 import type { ChannelState } from "@denyx/design-system/widget";
 
 const meta: Meta<typeof AiReceiverChannels> = {
-  title: "Denyx AI/Cards/AiReceiverChannels",
+  title: "Composite/AiReceiverChannels",
   component: AiReceiverChannels,
   tags: ["autodocs"],
   parameters: {

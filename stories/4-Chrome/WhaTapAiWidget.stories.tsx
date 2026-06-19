@@ -12,7 +12,7 @@ import { AiUserBubble, AiChatExchange } from "@denyx/design-system/widget";
  * Stories for [[DenyxAiWidget]] — AI 위젯 (480px 우측 패널).
  */
 const meta: Meta<typeof DenyxAiWidget> = {
-  title: "Denyx AI/Widget",
+  title: "Shell/DenyxAiWidget",
   component: DenyxAiWidget,
   tags: ["autodocs"],
   parameters: {

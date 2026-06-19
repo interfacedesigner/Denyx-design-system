@@ -5,7 +5,7 @@ import { TimeRangeSelector } from "@denyx/design-system";
  * Stories for [[TimeRangeSelector]] — OptionbarPage 시간 범위 선택자.
  */
 const meta: Meta<typeof TimeRangeSelector> = {
-  title: "Chrome/TimeRangeSelector",
+  title: "Primitives/TimeRangeSelector",
   component: TimeRangeSelector,
   tags: ["autodocs"],
   parameters: {

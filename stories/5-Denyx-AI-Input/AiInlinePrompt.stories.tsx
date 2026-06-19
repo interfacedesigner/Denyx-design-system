@@ -15,7 +15,7 @@ const DB_SUGGESTIONS: AiPromptSuggestion[] = [
 ];
 
 const meta: Meta<typeof AiInlinePrompt> = {
-  title: "Denyx AI/Input/InlinePrompt",
+  title: "Composite/AiInlinePrompt",
   component: AiInlinePrompt,
   tags: ["autodocs"],
   parameters: {

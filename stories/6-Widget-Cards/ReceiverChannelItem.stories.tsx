@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import ReceiverChannelItem from "../../src/widget/ReceiverChannelItem";
 
 const meta: Meta<typeof ReceiverChannelItem> = {
-  title: "Denyx AI/Parts/ReceiverChannelItem",
+  title: "Primitives/ReceiverChannelItem",
   component: ReceiverChannelItem,
   tags: ["autodocs"],
   parameters: {
