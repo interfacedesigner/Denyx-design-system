@@ -38,22 +38,34 @@ function DenyxSymbol({ size = 24, color = "#333333" }: { size?: number; color?: 
       xmlns="http://www.w3.org/2000/svg"
       aria-label="DNYX Symbol"
     >
-      <g transform="translate(8, 52)" stroke={color} strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" fill="none">
-        <path d="M68,40 A46,46 0 1,0 68,132" />
-        <path d="M68,52 A34,34 0 1,0 68,120" />
-        <path d="M68,64 A22,22 0 1,0 68,108" />
-        <path d="M52,40 C52,16 72,6 92,6 C102,6 108,12 108,22" />
-        <path d="M56,52 C56,30 74,18 90,18 C98,18 102,22 102,30" />
-        <path d="M60,64 C62,46 76,34 88,34 C94,34 96,38 96,42" />
-        <path d="M68,132 L68,46 C68,12 96,4 120,4 C144,4 172,12 172,46 L172,132" />
-        <path d="M78,120 L78,52 C78,24 100,16 120,16 C140,16 162,24 162,52 L162,132" />
-        <path d="M88,108 L88,60 C88,36 104,28 120,28 C136,28 152,36 152,60 L152,132" />
-        <path d="M152,40 L210,120 Q218,132 210,140" />
-        <path d="M162,40 L210,108 Q216,118 210,128" />
-        <path d="M172,40 L210,96 Q214,104 210,112" />
-        <path d="M210,40 L152,120 Q144,132 152,140" />
-        <path d="M210,52 L162,120 Q156,128 162,136" />
-        <path d="M210,64 L172,108 Q168,114 172,120" />
+      <g transform="translate(6, 62)" stroke={color} strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round" fill="none">
+        {/* d: arcs */}
+        <path d="M72,30 A44,44 0 1,0 72,118" />
+        <path d="M72,42 A32,32 0 1,0 72,106" />
+        <path d="M72,54 A20,20 0 1,0 72,94" />
+        {/* d: stem */}
+        <line x1="72" y1="30" x2="72" y2="118" />
+        <line x1="72" y1="42" x2="72" y2="106" />
+        <line x1="72" y1="54" x2="72" y2="94" />
+        {/* d: tail */}
+        <path d="M48,30 C48,10 68,0 86,0 C96,0 102,6 102,14" />
+        <path d="M52,42 C52,24 68,14 84,14 C92,14 96,18 96,24" />
+        <path d="M56,54 C58,40 70,32 82,32 C88,32 90,36 90,40" />
+        {/* n: arches */}
+        <path d="M72,118 L72,34 C72,6 98,0 118,0 C138,0 164,6 164,34 L164,118" />
+        <path d="M82,106 L82,42 C82,18 100,12 118,12 C136,12 154,18 154,42 L154,118" />
+        <path d="M92,94 L92,50 C92,30 104,24 118,24 C132,24 144,30 144,50 L144,118" />
+        {/* x: top-left → bottom-right */}
+        <path d="M144,30 L194,98 C200,108 196,118 188,118" />
+        <path d="M154,30 L196,88 C200,96 198,106 192,106" />
+        <path d="M164,30 L198,78 C200,84 200,92 196,94" />
+        {/* x: top-right → bottom-left */}
+        <path d="M216,30 L166,98 C160,108 164,118 172,118" />
+        <path d="M206,30 L164,88 C160,96 162,106 168,106" />
+        <path d="M196,30 L162,78 C160,84 160,92 164,94" />
+        {/* x: baseline */}
+        <line x1="144" y1="118" x2="172" y2="118" />
+        <line x1="154" y1="106" x2="168" y2="106" />
       </g>
     </svg>
   );
@@ -62,34 +74,46 @@ function DenyxSymbol({ size = 24, color = "#333333" }: { size?: number; color?: 
 /* ─── Horizon — dnx 심볼 + DENYX 워드마크 가로형 ─── */
 
 function DenyxHorizon({ height = 24, color = "#333333" }: { height?: number; color?: string }) {
-  const width = Math.round(height * (320 / 96));
+  const width = Math.round(height * (340 / 96));
   return (
     <svg
       width={width}
       height={height}
-      viewBox="0 0 320 96"
+      viewBox="0 0 340 96"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-label="DNYX"
     >
-      <g transform="translate(8, 6)" stroke={color} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none">
-        <path d="M52,30 A36,36 0 1,0 52,102" />
-        <path d="M52,40 A26,26 0 1,0 52,92" />
-        <path d="M52,50 A16,16 0 1,0 52,82" />
-        <path d="M40,30 C40,12 56,4 72,4 C80,4 84,8 84,16" />
-        <path d="M44,40 C44,24 58,16 70,16 C76,16 78,20 78,26" />
-        <path d="M48,50 C50,38 60,30 68,30 C72,30 74,34 74,38" />
-        <path d="M52,102 L52,36 C52,10 76,2 94,2 C112,2 136,10 136,36 L136,102" />
-        <path d="M60,92 L60,42 C60,20 78,14 94,14 C110,14 128,20 128,42 L128,102" />
-        <path d="M68,82 L68,48 C68,30 82,24 94,24 C106,24 120,30 120,48 L120,102" />
-        <path d="M120,30 L170,92 Q176,102 170,108" />
-        <path d="M128,30 L170,82 Q174,90 170,96" />
-        <path d="M136,30 L170,72 Q172,78 170,82" />
-        <path d="M170,30 L120,92 Q114,102 120,108" />
-        <path d="M170,40 L128,92 Q124,98 128,104" />
-        <path d="M170,50 L136,82 Q134,86 136,90" />
+      <g transform="translate(4, 4)" stroke={color} strokeWidth="3.6" strokeLinecap="round" strokeLinejoin="round" fill="none">
+        {/* d: arcs */}
+        <path d="M54,22 A33,33 0 1,0 54,88" />
+        <path d="M54,31 A24,24 0 1,0 54,79" />
+        <path d="M54,40 A15,15 0 1,0 54,70" />
+        {/* d: stem */}
+        <line x1="54" y1="22" x2="54" y2="88" />
+        <line x1="54" y1="31" x2="54" y2="79" />
+        <line x1="54" y1="40" x2="54" y2="70" />
+        {/* d: tail */}
+        <path d="M36,22 C36,7 51,0 65,0 C72,0 77,4 77,10" />
+        <path d="M39,31 C39,18 51,10 63,10 C69,10 72,14 72,18" />
+        <path d="M42,40 C44,30 53,24 62,24 C66,24 68,27 68,30" />
+        {/* n: arches */}
+        <path d="M54,88 L54,26 C54,4 74,0 89,0 C104,0 124,4 124,26 L124,88" />
+        <path d="M62,79 L62,32 C62,14 76,9 89,9 C102,9 116,14 116,32 L116,88" />
+        <path d="M70,70 L70,38 C70,23 79,18 89,18 C99,18 108,23 108,38 L108,88" />
+        {/* x: top-left → bottom-right */}
+        <path d="M108,22 L147,74 C151,80 149,88 143,88" />
+        <path d="M116,22 L149,66 C151,72 150,79 146,79" />
+        <path d="M124,22 L151,58 C152,63 151,70 149,70" />
+        {/* x: top-right → bottom-left */}
+        <path d="M164,22 L125,74 C121,80 123,88 129,88" />
+        <path d="M156,22 L123,66 C121,72 122,79 126,79" />
+        <path d="M148,22 L121,58 C120,63 121,70 123,70" />
+        {/* x: baseline */}
+        <line x1="108" y1="88" x2="129" y2="88" />
+        <line x1="116" y1="79" x2="126" y2="79" />
       </g>
-      <text x="200" y="72" fontFamily="'Inter','Helvetica Neue',Arial,sans-serif" fontSize="28" fontWeight={700} letterSpacing="2" fill={color}>DENYX</text>
+      <text x="195" y="68" fontFamily="'Inter','Helvetica Neue',Arial,sans-serif" fontSize="26" fontWeight={700} letterSpacing="2.5" fill={color}>DENYX</text>
     </svg>
   );
 }
