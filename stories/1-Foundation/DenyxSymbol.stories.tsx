@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 /**
  * Foundation/Denyx Symbol
  *
- * DNYX 브랜드 심볼 (dnx 라운디드 레터폼 · 3중 평행 스트로크) + Horizon (심볼 + 워드마크).
+ * DNYX 브랜드 심볼 — dnx 라운디드 레터폼 (Figma PNG 자동 트레이싱).
  * 단일 다크그레이(`#333333`) 톤. 다크 배경에서는 `#FFFFFF` 전환.
  *
  * 주의: 이 심볼은 `<AiSymbol>` (보라 그라데이션 pinwheel, AI 응답 전용 마크) 과는
@@ -17,7 +17,7 @@ const meta: Meta = {
     docs: {
       description: {
         component:
-          "**DNYX 브랜드 심볼 + Horizon 워드마크.** dnx 라운디드 레터폼 · 3중 평행 스트로크의 단일 다크그레이(`#333`) 심볼. " +
+          "**DNYX 브랜드 심볼.** dnx 라운디드 레터폼 (Figma PNG 자동 트레이싱). 단일 다크그레이(`#333`) 심볼. " +
           "다크 배경에서는 `#FFFFFF` 전환. " +
           "AI 기능 식별용 마크는 [Denyx AI/Symbol](?path=/story/denyx-ai-symbol--default) — 별개의 보라 그라데이션 pinwheel.",
       },
@@ -55,37 +55,6 @@ function DenyxSymbol({ size = 24, color = "#333333" }: { size?: number; color?: 
   );
 }
 
-/* ─── Horizon — dnx 심볼 + DENYX 워드마크 가로형 ─── */
-
-function DenyxHorizon({ height = 24, color = "#333333" }: { height?: number; color?: string }) {
-  const width = Math.round(height * (340 / 96));
-  return (
-    <svg
-      width={width}
-      height={height}
-      viewBox="0 0 340 96"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-label="DNYX"
-    >
-      <g fill={color}>
-        <path d="M45.3,4.6 L53.0,8.5 L58.8,13.7 L64.0,21.4 L65.6,25.9 L66.2,30.1 L62.7,28.2 L57.5,26.9 L56.5,24.3 L53.0,19.2 L49.1,15.6 L44.9,13.0 L45.3,4.6 Z" />
-        <path d="M45.3,19.8 L47.8,21.7 L50.4,25.0 L52.4,28.8 L53.0,31.7 L52.7,64.9 L52.0,67.2 L49.5,71.7 L44.3,76.2 L38.8,78.1 L32.4,78.1 L28.8,77.2 L25.3,75.2 L20.4,70.1 L18.2,64.0 L17.9,60.1 L18.5,55.6 L19.8,52.4 L22.4,48.8 L27.2,44.9 L31.4,43.3 L39.1,43.3 L39.5,51.7 L37.2,51.1 L33.7,51.1 L31.1,52.0 L27.2,55.6 L25.9,58.8 L25.9,61.7 L26.2,63.3 L28.5,67.2 L30.8,69.1 L33.0,70.1 L37.8,70.1 L39.8,69.4 L43.3,66.2 L44.9,62.7 L45.3,59.1 L45.3,19.8 Z" />
-        <path d="M110.1,32.0 L117.5,32.4 L117.8,38.8 L120.4,45.3 L124.9,50.7 L136.2,61.7 L122.6,75.2 L120.7,77.8 L118.1,83.6 L117.1,91.4 L109.7,91.4 L109.7,86.2 L111.0,80.1 L113.6,74.3 L116.2,70.7 L125.2,61.4 L115.5,52.0 L113.0,48.2 L110.1,40.1 L110.1,32.0 Z" />
-        <path d="M122.9,32.0 L130.4,32.0 L130.7,35.6 L132.0,38.5 L133.3,40.4 L140.4,47.2 L147.8,38.8 L149.1,35.9 L149.4,32.4 L157.1,32.4 L157.1,36.6 L156.1,39.8 L153.2,44.6 L140.0,57.8 L125.8,43.6 L123.3,38.2 L122.9,32.0 Z" />
-        <path d="M170.0,32.0 L170.3,34.9 L169.7,40.4 L166.8,48.5 L163.6,53.0 L154.5,61.7 L164.2,71.4 L166.5,74.6 L169.0,80.7 L170.0,85.2 L170.0,91.4 L162.9,91.4 L161.9,84.3 L158.7,77.2 L144.2,62.3 L143.9,61.4 L156.5,49.1 L159.7,44.9 L162.3,37.8 L162.6,32.4 L170.0,32.0 Z" />
-        <path d="M89.7,37.8 L83.9,38.2 L78.8,40.1 L74.6,43.0 L69.8,49.1 L67.8,46.2 L63.6,42.0 L59.4,39.8 L59.4,31.4 L64.9,33.7 L69.8,37.2 L76.8,32.7 L84.3,30.4 L92.6,30.1 L100.7,32.0 L105.2,34.3 L105.9,35.6 L106.5,42.4 L108.8,48.5 L103.6,42.7 L100.4,40.4 L94.6,38.2 L89.7,37.8 Z" />
-        <path d="M59.4,45.9 L61.1,46.9 L64.0,50.1 L66.9,56.5 L66.9,91.4 L59.4,91.0 L59.4,45.9 Z" />
-        <path d="M109.1,49.1 L113.0,55.3 L119.4,61.7 L112.0,69.8 L112.0,58.2 L111.3,54.3 L109.1,49.1 Z" />
-        <path d="M91.0,51.1 L88.1,50.7 L85.2,51.7 L82.0,54.6 L80.7,56.9 L80.1,63.6 L80.4,91.0 L72.7,91.4 L72.7,56.9 L73.9,53.0 L77.5,48.2 L80.7,45.6 L86.8,43.3 L92.3,43.3 L97.8,45.3 L103.0,49.8 L105.2,53.6 L106.5,59.8 L106.5,81.0 L105.5,91.4 L98.8,91.0 L98.8,58.5 L97.8,55.9 L95.9,53.3 L93.0,51.4 L91.0,51.1 Z" />
-        <path d="M4.6,64.0 L4.6,56.9 L6.3,49.8 L10.1,42.7 L15.6,36.9 L20.1,33.7 L27.9,30.4 L31.4,29.8 L39.1,29.8 L39.5,37.8 L31.4,37.8 L26.2,39.5 L20.4,43.3 L15.9,48.5 L13.7,53.0 L12.7,56.9 L12.7,64.3 L13.3,67.2 L15.6,72.3 L19.8,77.5 L26.6,82.0 L32.4,83.6 L38.5,83.6 L43.6,82.3 L49.8,78.8 L55.6,72.7 L55.6,84.3 L51.4,87.5 L46.9,89.7 L42.7,91.0 L33.3,91.7 L25.0,90.1 L17.2,85.9 L10.4,79.1 L6.6,72.3 L4.6,64.0 Z" />
-        <path d="M141.3,77.8 L139.7,76.8 L132.9,83.6 L131.0,87.5 L130.4,91.4 L122.9,91.0 L122.9,86.8 L125.5,80.4 L139.7,65.9 L140.4,65.9 L153.9,79.8 L156.8,85.9 L157.1,91.0 L149.7,91.4 L148.1,85.2 L141.3,77.8 Z" />
-      </g>
-      <text x="195" y="68" fontFamily="'Inter','Helvetica Neue',Arial,sans-serif" fontSize="26" fontWeight={700} letterSpacing="2.5" fill={color}>DENYX</text>
-    </svg>
-  );
-}
-
 /* ─── 공통 sub-section 헬퍼 ─────────────────────────────── */
 
 const sectionStyle: React.CSSProperties = { marginBottom: 40 };
@@ -108,7 +77,7 @@ const darkStyle: React.CSSProperties = { background: "#222", padding: 24, border
 
 /**
  * 단일 종합 story — 소스(`foundation-denyx-symbol--symbol`)와 동일 구조:
- * Symbol 7 sizes / Horizon 5 heights / Dark background / Color spec.
+ * Symbol 7 sizes / Dark background / Color spec.
  */
 export const Symbol: StoryObj = {
   render: () => (
@@ -129,26 +98,6 @@ export const Symbol: StoryObj = {
         </div>
       </div>
 
-      {/* ───── Horizon (심볼 + 워드마크) ───── */}
-      <div style={sectionStyle}>
-        <div style={titleStyle}>DNYX Horizon</div>
-        <div style={descStyle}>심볼 + DNYX 워드마크 가로형 조합.</div>
-        <div style={gridStyle}>
-          {[
-            { h: 16, label: "h=16px" },
-            { h: 20, label: "h=20px" },
-            { h: 24, label: "h=24px (원본)" },
-            { h: 32, label: "h=32px" },
-            { h: 48, label: "h=48px" },
-          ].map((v) => (
-            <div key={v.label} style={itemStyle}>
-              <div style={boxStyle}><DenyxHorizon height={v.h} /></div>
-              <span style={labelStyle}>{v.label}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* ───── 어두운 배경 위 ───── */}
       <div style={sectionStyle}>
         <div style={titleStyle}>On Dark Background</div>
@@ -162,14 +111,6 @@ export const Symbol: StoryObj = {
             <div style={itemStyle}>
               <div style={{ ...boxStyle, borderColor: "rgba(255,255,255,0.12)" }}><DenyxSymbol size={32} color="#FFFFFF" /></div>
               <span style={{ ...labelStyle, color: "#888" }}>32px</span>
-            </div>
-            <div style={itemStyle}>
-              <div style={{ ...boxStyle, borderColor: "rgba(255,255,255,0.12)" }}><DenyxHorizon height={24} color="#FFFFFF" /></div>
-              <span style={{ ...labelStyle, color: "#888" }}>Horizon 24</span>
-            </div>
-            <div style={itemStyle}>
-              <div style={{ ...boxStyle, borderColor: "rgba(255,255,255,0.12)" }}><DenyxHorizon height={32} color="#FFFFFF" /></div>
-              <span style={{ ...labelStyle, color: "#888" }}>Horizon 32</span>
             </div>
           </div>
         </div>
