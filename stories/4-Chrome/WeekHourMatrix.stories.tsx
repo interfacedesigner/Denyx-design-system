@@ -1,13 +1,13 @@
 import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { EventWeekTimeMatrix } from "@denyx/design-system";
+import { WeekHourMatrix } from "@denyx/design-system";
 
 /**
- * Stories for [[EventWeekTimeMatrix]] — 요일×시간 알림 수신 매트릭스.
+ * Stories for [[WeekHourMatrix]] — 요일×시간 알림 수신 매트릭스.
  */
-const meta: Meta<typeof EventWeekTimeMatrix> = {
-  title: "Primitives/EventWeekTimeMatrix",
-  component: EventWeekTimeMatrix,
+const meta: Meta<typeof WeekHourMatrix> = {
+  title: "Primitives/WeekHourMatrix",
+  component: WeekHourMatrix,
   tags: ["autodocs"],
   parameters: {
     layout: "padded",
@@ -29,7 +29,7 @@ const meta: Meta<typeof EventWeekTimeMatrix> = {
   },
 };
 export default meta;
-type Story = StoryObj<typeof EventWeekTimeMatrix>;
+type Story = StoryObj<typeof WeekHourMatrix>;
 
 // Helpers
 const allOff = (): boolean[][] => Array.from({ length: 7 }, () => Array(24).fill(false));
@@ -73,7 +73,7 @@ export const Interactive: Story = {
       const onCount = grid.flat().filter(Boolean).length;
       return (
         <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-          <EventWeekTimeMatrix weekdays={grid} onToggle={toggle} caption="셀 클릭으로 토글" />
+          <WeekHourMatrix weekdays={grid} onToggle={toggle} caption="셀 클릭으로 토글" />
           <div style={{ fontSize: 12, color: "#4c4c4c" }}>
             현재 ON 셀: <strong>{onCount}</strong> / 168
           </div>

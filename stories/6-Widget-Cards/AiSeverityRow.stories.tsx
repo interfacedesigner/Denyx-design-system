@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import EventListItem from "../../src/widget/EventListItem";
+import AiSeverityRow from "../../src/widget/AiSeverityRow";
 
-const meta: Meta<typeof EventListItem> = {
-  title: "Primitives/EventListItem",
-  component: EventListItem,
+const meta: Meta<typeof AiSeverityRow> = {
+  title: "Primitives/AiSeverityRow",
+  component: AiSeverityRow,
   tags: ["autodocs"],
   parameters: {
     layout: "padded",
@@ -11,7 +11,7 @@ const meta: Meta<typeof EventListItem> = {
     docs: {
       description: {
         component:
-          "**이벤트 행 (part)** — [[AiEventList]] 의 단일 `<li>`. 시간(고정폭) + severity 칩 + 소스 + 한 줄 메시지.",
+          "**심각도 행 (part)** — 시간(고정폭) + severity 칩 + 소스 + 한 줄 메시지.",
       },
     },
   },
@@ -24,7 +24,7 @@ const meta: Meta<typeof EventListItem> = {
   ],
 };
 export default meta;
-type Story = StoryObj<typeof EventListItem>;
+type Story = StoryObj<typeof AiSeverityRow>;
 
 export const Critical: Story = {
   args: {

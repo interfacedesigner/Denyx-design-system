@@ -12,7 +12,7 @@
  *
  * ## When NOT to use
  * - 3개 이상의 기준 중 택1 + 근거 설명 → [[AiCriteriaSelection]].
- * - 결정 없이 정보만 제시 → [[AiDashboardProposal]] / [[AiAlertRulePreview]] (카드 자체에 버튼 금지).
+ * - 결정 없이 정보만 제시 → [[AiProposalCard]] / [[AiKeyValuePreview]] (카드 자체에 버튼 금지).
  * - 자유 입력 / 자연어 응답 → [[AiInlinePrompt]] / [[AiPromptInput]].
  *
  * ## Composition rules

@@ -11,7 +11,7 @@
  * - peak 값과 시간대만 빠르게 확인하면 되는 요약 view
  *
  * ## When NOT to use
- * - 요일×시간 같은 격자형 빈도 표현 → [[EventWeekTimeMatrix]]
+ * - 요일×시간 같은 격자형 빈도 표현 → [[WeekHourMatrix]]
  * - 진행 단계 표시 → [[DashboardBuildingProgress]]
  * - 정밀한 인터랙션(zoom·tooltip·다중 시리즈)이 필요한 본격 차트 → 전용 차트 라이브러리
  *

@@ -1,5 +1,5 @@
 /**
- * EventWeekTimeMatrix — 요일(7) × 시간(24) 알림 수신 매트릭스.
+ * WeekHourMatrix — 요일(7) × 시간(24) 토글 매트릭스.
  *
  * ## Purpose
  * 7행(요일) × 24열(시간) boolean 격자를 토글 버튼으로 표현. 각 셀 ON/OFF 로
@@ -25,7 +25,7 @@
  *
  * @example
  * ```tsx
- * <EventWeekTimeMatrix
+ * <WeekHourMatrix
  *   caption="요일·시간별 알림 설정"
  *   weekdays={grid}
  *   onToggle={(d, h, next) => setCell(d, h, next)}
@@ -35,7 +35,7 @@
 
 const DEFAULT_DAY_LABELS = ["월", "화", "수", "목", "금", "토", "일"];
 
-export type EventWeekTimeMatrixProps = {
+export type WeekHourMatrixProps = {
   /** 7 × 24 boolean 그리드. weekdays[d][h] = true 면 해당 시간대 알림 수신. */
   weekdays: boolean[][];
   /** 셀 토글 콜백. 미지정이면 read-only. */
@@ -46,12 +46,12 @@ export type EventWeekTimeMatrixProps = {
   caption?: string;
 };
 
-export default function EventWeekTimeMatrix({
+export default function WeekHourMatrix({
   weekdays,
   onToggle,
   dayLabels = DEFAULT_DAY_LABELS,
   caption,
-}: EventWeekTimeMatrixProps) {
+}: WeekHourMatrixProps) {
   const interactive = !!onToggle;
 
   return (

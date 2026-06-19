@@ -14,7 +14,7 @@
 |---|---|
 | 레이아웃 | DashboardLayout · Sidebar · PageHeader · PageHeaderAiInline · SubHeaderBar |
 | 옵션바 (시간/인스턴스/프리셋) | OptionbarPage · OptionbarInstanceSelector · LiveTimerCompact · TimeRangeSelector · PresetSelect |
-| 데이터 표시 | DataTable · FilterBar · MiniLineChart · EventWeekTimeMatrix |
+| 데이터 표시 | DataTable · FilterBar · MiniLineChart · WeekHourMatrix |
 | 액션·진입 | Button · AiSymbol |
 | 알림·상태 | Toast · Stage · DashboardBuildingProgress |
 | 위젯 컨텍스트 | DenyxAiContext (Provider) |
@@ -340,7 +340,7 @@ export type DataTableProps<T> = {
 
 ---
 
-## EventWeekTimeMatrix
+## WeekHourMatrix
 
 요일(7) × 시간(24) 알림 수신 매트릭스. 셀 ON = Tone "low" 배경(#e8f4ff), OFF = 회색 격자.
 
@@ -354,7 +354,7 @@ export type DataTableProps<T> = {
 시간 헤더는 6시간 간격(0/6/12/18)만 표시 — 24개 다 쓰면 비좁음.
 
 ```tsx
-<EventWeekTimeMatrix
+<WeekHourMatrix
   caption="요일·시간별 알림 수신"
   weekdays={weekdays}
   onToggle={(d, h, on) => updateWeekdays(d, h, on)}

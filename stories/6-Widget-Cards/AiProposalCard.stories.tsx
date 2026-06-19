@@ -1,23 +1,23 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { AiDashboardProposal } from "@denyx/design-system/widget";
+import { AiProposalCard } from "@denyx/design-system/widget";
 
-const meta: Meta<typeof AiDashboardProposal> = {
-  title: "Composite/AiDashboardProposal",
-  component: AiDashboardProposal,
+const meta: Meta<typeof AiProposalCard> = {
+  title: "Composite/AiProposalCard",
+  component: AiProposalCard,
   tags: ["autodocs"],
   parameters: {
     layout: "padded",
     backgrounds: { default: "surface-muted" },
     docs: {
       description: {
-        component: "**대시보드 제안 카드** — intro + 위치 안내 + 섹션(이모지+제목+bullets) 다수 + 마무리 질문.",
+        component: "**제안 카드** — intro + 위치 안내 + 섹션(이모지+제목+bullets) 다수 + 마무리 질문.",
       },
     },
   },
   decorators: [(Story) => <div style={{ width: 440 }}><Story /></div>],
 };
 export default meta;
-type Story = StoryObj<typeof AiDashboardProposal>;
+type Story = StoryObj<typeof AiProposalCard>;
 
 export const Default: Story = {
   args: {

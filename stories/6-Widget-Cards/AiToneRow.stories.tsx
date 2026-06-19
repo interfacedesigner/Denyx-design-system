@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import CriteriaGroup from "../../src/widget/CriteriaGroup";
+import AiToneRow from "../../src/widget/AiToneRow";
 
-const meta: Meta<typeof CriteriaGroup> = {
-  title: "Primitives/CriteriaGroup",
-  component: CriteriaGroup,
+const meta: Meta<typeof AiToneRow> = {
+  title: "Primitives/AiToneRow",
+  component: AiToneRow,
   tags: ["autodocs"],
   parameters: {
     layout: "padded",
@@ -11,7 +11,7 @@ const meta: Meta<typeof CriteriaGroup> = {
     docs: {
       description: {
         component:
-          "**분류 기준 그룹 행 (part)** — [[AiCriteriaSelection]] 의 단일 기준 행. tone 배경 + 좌측 도트 + 제목 + 상세.",
+          "**tone 행 (part)** — tone 배경 + 좌측 도트 + 제목 + 상세.",
       },
     },
   },
@@ -24,7 +24,7 @@ const meta: Meta<typeof CriteriaGroup> = {
   ],
 };
 export default meta;
-type Story = StoryObj<typeof CriteriaGroup>;
+type Story = StoryObj<typeof AiToneRow>;
 
 export const High: Story = {
   args: {

@@ -1,23 +1,23 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { AiAlertRulePreview } from "@denyx/design-system/widget";
+import { AiKeyValuePreview } from "@denyx/design-system/widget";
 
-const meta: Meta<typeof AiAlertRulePreview> = {
-  title: "Composite/AiAlertRulePreview",
-  component: AiAlertRulePreview,
+const meta: Meta<typeof AiKeyValuePreview> = {
+  title: "Composite/AiKeyValuePreview",
+  component: AiKeyValuePreview,
   tags: ["autodocs"],
   parameters: {
     layout: "padded",
     backgrounds: { default: "surface-muted" },
     docs: {
       description: {
-        component: "**알림 규칙 미리보기 카드** — KV 필드 리스트 + (옵션) 참고 사항. AI 가 작성한 룰을 등록 전 사용자 확인용.",
+        component: "**KV 미리보기 카드** — KV 필드 리스트 + (옵션) 참고 사항. AI 가 작성한 내용을 등록 전 사용자 확인용.",
       },
     },
   },
   decorators: [(Story) => <div style={{ width: 440 }}><Story /></div>],
 };
 export default meta;
-type Story = StoryObj<typeof AiAlertRulePreview>;
+type Story = StoryObj<typeof AiKeyValuePreview>;
 
 export const Default: Story = {
   args: {

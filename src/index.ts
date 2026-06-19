@@ -46,8 +46,8 @@ export type { DashboardBuildingProgressProps } from "./DashboardBuildingProgress
 export { default as DataTableRow } from "./DataTableRow";
 export { default as DateTimeBlock } from "./DateTimeBlock";
 export type { DateParts } from "./DateTimeBlock";
-export { default as EventWeekTimeMatrix } from "./EventWeekTimeMatrix";
-export type { EventWeekTimeMatrixProps } from "./EventWeekTimeMatrix";
+export { default as WeekHourMatrix } from "./WeekHourMatrix";
+export type { WeekHourMatrixProps } from "./WeekHourMatrix";
 export { default as FilterChipItem } from "./FilterChipItem";
 export { default as FilterDropdownOptionItem } from "./FilterDropdownOptionItem";
 export { default as HeaderPillButton } from "./HeaderPillButton";
@@ -55,7 +55,6 @@ export { IcDocs, IcSupport } from "./icons/HeaderIcons";
 export { default as OptionbarInstanceSelector } from "./OptionbarInstanceSelector";
 export type { InstanceStatus } from "./OptionbarInstanceSelector";
 export { default as OptionbarItem } from "./OptionbarItem";
-export { default as OptionbarNewVersionButton } from "./OptionbarNewVersionButton";
 export { default as OptionbarValueDisplay } from "./OptionbarValueDisplay";
 export { default as PageHeaderNotificationItem } from "./PageHeaderNotificationItem";
 export { default as PageHeaderProfileMenuItem } from "./PageHeaderProfileMenuItem";
@@ -75,15 +74,10 @@ export { default as TimeRangeSelector } from "./TimeRangeSelector";
 export { default as AiQuickActionChip } from "./AiQuickActionChip";
 export { default as AiActionChip } from "./widget/AiActionChip";
 export { default as AiAttachmentChip } from "./widget/AiAttachmentChip";
-export { default as ClassificationTableRow } from "./widget/ClassificationTableRow";
-export { default as CostBreakdownRow } from "./widget/CostBreakdownRow";
-export { default as CostTableRow } from "./widget/CostTableRow";
-export { default as CriteriaGroup } from "./widget/CriteriaGroup";
-export { default as CriteriaOptionButton } from "./widget/CriteriaOptionButton";
-export { default as EventListItem } from "./widget/EventListItem";
-export { default as MigPlanRow } from "./widget/MigPlanRow";
+export { default as AiToneRow } from "./widget/AiToneRow";
+export { default as AiOptionButton } from "./widget/AiOptionButton";
+export { default as AiSeverityRow } from "./widget/AiSeverityRow";
 export { default as ReasoningStep } from "./widget/ReasoningStep";
-export { default as ReceiverChannelItem } from "./widget/ReceiverChannelItem";
 export { default as TimelineStepItem } from "./widget/TimelineStepItem";
 
 // ─── Composite — Primitives 를 1단계 조합. Composite 끼리 import 금지 ──
@@ -98,12 +92,11 @@ export type {
   FilterDropdownOption,
   FilterDropdownPlacement,
 } from "./FilterDropdown";
-export { default as OptionbarPage } from "./OptionbarPage";
 export { default as PageHeader } from "./PageHeader";
 export type { ProfileMenuItem, NotificationItem } from "./PageHeader";
 export { default as PageHeaderAiInline } from "./PageHeaderAiInline";
 export type { PageHeaderAiInlineProps } from "./PageHeaderAiInline";
-export { default as Sidebar, K8S_GPU_MENU } from "./Sidebar";
+export { default as Sidebar } from "./Sidebar";
 export type { MenuItem, ProjectContext, OrgContext } from "./Sidebar";
 
 // ─── Shell — 모든 계층 조합. 앱 진입점 ────────────────────────────────
