@@ -28,7 +28,7 @@ import type { OrgContext } from "./Sidebar";
  *
  * @example
  * ```tsx
- * <SidebarOrgSwitcher org={{ label: "[조직] 와탭랩스", icon: "denyx-symbol.svg" }} onClick={openOrgPicker} />
+ * <SidebarOrgSwitcher org={{ label: "[조직] Denyx", icon: "denyx-symbol.svg" }} onClick={openOrgPicker} />
  * ```
  */
 

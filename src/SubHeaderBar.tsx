@@ -27,7 +27,7 @@
  *
  * <SubHeaderBar right={<Button size="md">새 조직</Button>}>
  *   <Button variant="basic" size="md" onClick={goBack}>← 엔터프라이즈 관리</Button>
- *   <span className="text-base text-tertiary">/ 조직: <span className="text-secondary font-medium">와탭랩스</span></span>
+ *   <span className="text-base text-tertiary">/ 조직: <span className="text-secondary font-medium">Denyx</span></span>
  * </SubHeaderBar>
  * ```
  */

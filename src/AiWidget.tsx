@@ -97,7 +97,7 @@ export default function AiWidget({ open = true, variant = "slide", onClose }: Ai
             <AiSymbol size={14} />
           </div>
           <div className="flex-1 text-md leading-loose" style={{ color: "var(--color-text-body)" }}>
-            <b style={{ color: "var(--color-text-primary)" }}>{"{userName}"}</b>님, 안녕하세요. 와탭 AI 어시스턴트입니다.<br />
+            <b style={{ color: "var(--color-text-primary)" }}>{"{userName}"}</b>님, 안녕하세요. Denyx AI 어시스턴트입니다.<br />
             <b style={{ color: "var(--color-text-primary)" }}>{"{dashboardName}"}</b> 분석을 함께 하겠습니다. 무엇부터 살펴볼까요?
           </div>
         </div>

@@ -35,7 +35,7 @@
  *   activeProduct="app"
  *   project={{ productIcon: "product-app.svg", groupLabel: "[그룹] 운영", projectLabel: "[프로젝트] my-app" }}
  *   menu={customMenu}
- *   org={{ label: "[조직] 와탭랩스", icon: "denyx-symbol.svg" }}
+ *   org={{ label: "[조직] Denyx", icon: "denyx-symbol.svg" }}
  *   onOrgClick={openOrgPicker}
  * />
  * ```
@@ -143,7 +143,7 @@ const DEFAULT_PROJECT: ProjectContext = {
 
 /** 상단 조직 스위처 컨텍스트. `org={null}`이면 조직 스위처 숨김. `icon` 생략 시 심볼 미표시. */
 export type OrgContext = { label: string; icon?: string; badge?: string };
-const DEFAULT_ORG: OrgContext = { label: "[조직] 와탭랩스 대관", icon: "denyx-symbol.svg" };
+const DEFAULT_ORG: OrgContext = { label: "[조직] Denyx", icon: "denyx-symbol.svg" };
 
 /**
  * 사이드바 컴포넌트.

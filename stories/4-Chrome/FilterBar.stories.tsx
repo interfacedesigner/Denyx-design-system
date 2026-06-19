@@ -245,7 +245,7 @@ export const NoSearch: Story = {
   },
 };
 
-/** Realistic — 통합 이벤트 목록 헤더 시뮬레이션 (라이브 와탭 콘솔 패턴). */
+/** Realistic — 통합 이벤트 목록 헤더 시뮬레이션 (라이브 Denyx 콘솔 패턴). */
 export const RealisticEventList: Story = {
   render: () => {
     const Demo = () => {
