@@ -1,3 +1,32 @@
-<svg width="60" height="24" viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<text x="30" y="17" text-anchor="middle" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="18" font-weight="800" letter-spacing="1" fill="#333333">DNYX</text>
+<svg width="80" height="24" viewBox="0 0 320 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(8, 6)" stroke="#333333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- d: outer arc -->
+    <path d="M52,30 A36,36 0 1,0 52,102" />
+    <!-- d: middle arc -->
+    <path d="M52,40 A26,26 0 1,0 52,92" />
+    <!-- d: inner arc -->
+    <path d="M52,50 A16,16 0 1,0 52,82" />
+
+    <!-- d: tail -->
+    <path d="M40,30 C40,12 56,4 72,4 C80,4 84,8 84,16" />
+    <path d="M44,40 C44,24 58,16 70,16 C76,16 78,20 78,26" />
+    <path d="M48,50 C50,38 60,30 68,30 C72,30 74,34 74,38" />
+
+    <!-- n -->
+    <path d="M52,102 L52,36 C52,10 76,2 94,2 C112,2 136,10 136,36 L136,102" />
+    <path d="M60,92 L60,42 C60,20 78,14 94,14 C110,14 128,20 128,42 L128,102" />
+    <path d="M68,82 L68,48 C68,30 82,24 94,24 C106,24 120,30 120,48 L120,102" />
+
+    <!-- x -->
+    <path d="M120,30 L170,92 Q176,102 170,108" />
+    <path d="M128,30 L170,82 Q174,90 170,96" />
+    <path d="M136,30 L170,72 Q172,78 170,82" />
+
+    <path d="M170,30 L120,92 Q114,102 120,108" />
+    <path d="M170,40 L128,92 Q124,98 128,104" />
+    <path d="M170,50 L136,82 Q134,86 136,90" />
+  </g>
+
+  <!-- DENYX wordmark -->
+  <text x="200" y="72" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="28" font-weight="700" letter-spacing="2" fill="#333333">DENYX</text>
 </svg>

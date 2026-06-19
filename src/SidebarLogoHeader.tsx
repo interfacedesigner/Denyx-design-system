@@ -3,7 +3,7 @@
  *
  * ## Purpose
  * 사이드바 최상단의 48px 로고 영역을 렌더. [[PageHeader]](48px)와 동일 높이로 정렬.
- * `collapsed=false` 면 풀 로고(60×24), `collapsed=true` 면 심볼(24×24)만 표시.
+ * `collapsed=false` 면 풀 로고(80×24), `collapsed=true` 면 심볼(24×24)만 표시.
  *
  * ## When to use
  * - [[Sidebar]] 최상단에서 렌더하는 **기본 용법**. 보통 단독 사용하지 않음.
@@ -34,7 +34,7 @@ export default function SidebarLogoHeader({
   collapsed = false,
   width = 240,
 }: {
-  /** true면 심볼(24px)만, false면 풀 로고(126×24). */
+  /** true면 심볼(24px)만, false면 풀 로고(80×24). */
   collapsed?: boolean;
   /** 헤더 폭 — Sidebar의 현재 width와 동기화. */
   width?: number;
@@ -58,7 +58,7 @@ export default function SidebarLogoHeader({
         <img
           alt="Denyx"
           src={icon("denyx-logo.svg")}
-          style={{ width: 60, height: 24 }}
+          style={{ width: 80, height: 24 }}
         />
       )}
     </div>

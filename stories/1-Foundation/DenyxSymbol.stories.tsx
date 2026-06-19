@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 /**
  * Foundation/Denyx Symbol
  *
- * DNYX 브랜드 심볼 (4 바) + Horizon (심볼 + 워드마크) 가로형 조합.
+ * DNYX 브랜드 심볼 (dnx 라운디드 레터폼 · 3중 평행 스트로크) + Horizon (심볼 + 워드마크).
  * 단일 다크그레이(`#333333`) 톤. 다크 배경에서는 `#FFFFFF` 전환.
  *
  * 주의: 이 심볼은 `<AiSymbol>` (보라 그라데이션 pinwheel, AI 응답 전용 마크) 과는
@@ -17,7 +17,7 @@ const meta: Meta = {
     docs: {
       description: {
         component:
-          "**DNYX 브랜드 심볼 + Horizon 워드마크.** 4 바 구조의 단일 다크그레이(`#333`) 심볼. " +
+          "**DNYX 브랜드 심볼 + Horizon 워드마크.** dnx 라운디드 레터폼 · 3중 평행 스트로크의 단일 다크그레이(`#333`) 심볼. " +
           "다크 배경에서는 `#FFFFFF` 전환. " +
           "AI 기능 식별용 마크는 [Denyx AI/Symbol](?path=/story/denyx-ai-symbol--default) — 별개의 보라 그라데이션 pinwheel.",
       },
@@ -26,39 +26,70 @@ const meta: Meta = {
 };
 export default meta;
 
-/* ─── Symbol — DNYX 텍스트 마크 ─────────────────── */
+/* ─── Symbol — dnx 라운디드 레터폼 (3중 평행 스트로크) ─────── */
 
 function DenyxSymbol({ size = 24, color = "#333333" }: { size?: number; color?: string }) {
-  const fontSize = Math.round(size * 0.46);
   return (
     <svg
       width={size}
       height={size}
-      viewBox="0 0 24 24"
+      viewBox="0 0 240 240"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-label="DNYX Symbol"
     >
-      <text x="12" y="16.5" textAnchor="middle" fontFamily="'Inter','Helvetica Neue',Arial,sans-serif" fontSize={fontSize} fontWeight={800} letterSpacing="-0.3" fill={color}>DNYX</text>
+      <g transform="translate(8, 52)" stroke={color} strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" fill="none">
+        <path d="M68,40 A46,46 0 1,0 68,132" />
+        <path d="M68,52 A34,34 0 1,0 68,120" />
+        <path d="M68,64 A22,22 0 1,0 68,108" />
+        <path d="M52,40 C52,16 72,6 92,6 C102,6 108,12 108,22" />
+        <path d="M56,52 C56,30 74,18 90,18 C98,18 102,22 102,30" />
+        <path d="M60,64 C62,46 76,34 88,34 C94,34 96,38 96,42" />
+        <path d="M68,132 L68,46 C68,12 96,4 120,4 C144,4 172,12 172,46 L172,132" />
+        <path d="M78,120 L78,52 C78,24 100,16 120,16 C140,16 162,24 162,52 L162,132" />
+        <path d="M88,108 L88,60 C88,36 104,28 120,28 C136,28 152,36 152,60 L152,132" />
+        <path d="M152,40 L210,120 Q218,132 210,140" />
+        <path d="M162,40 L210,108 Q216,118 210,128" />
+        <path d="M172,40 L210,96 Q214,104 210,112" />
+        <path d="M210,40 L152,120 Q144,132 152,140" />
+        <path d="M210,52 L162,120 Q156,128 162,136" />
+        <path d="M210,64 L172,108 Q168,114 172,120" />
+      </g>
     </svg>
   );
 }
 
-/* ─── Horizon — DNYX 워드마크 가로형 (60x24 base) ─── */
+/* ─── Horizon — dnx 심볼 + DENYX 워드마크 가로형 ─── */
 
 function DenyxHorizon({ height = 24, color = "#333333" }: { height?: number; color?: string }) {
-  const width = Math.round(height * (60 / 24));
-  const fontSize = Math.round(height * 0.75);
+  const width = Math.round(height * (320 / 96));
   return (
     <svg
       width={width}
       height={height}
-      viewBox="0 0 60 24"
+      viewBox="0 0 320 96"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-label="DNYX"
     >
-      <text x="30" y="17" textAnchor="middle" fontFamily="'Inter','Helvetica Neue',Arial,sans-serif" fontSize={fontSize} fontWeight={800} letterSpacing="1" fill={color}>DNYX</text>
+      <g transform="translate(8, 6)" stroke={color} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none">
+        <path d="M52,30 A36,36 0 1,0 52,102" />
+        <path d="M52,40 A26,26 0 1,0 52,92" />
+        <path d="M52,50 A16,16 0 1,0 52,82" />
+        <path d="M40,30 C40,12 56,4 72,4 C80,4 84,8 84,16" />
+        <path d="M44,40 C44,24 58,16 70,16 C76,16 78,20 78,26" />
+        <path d="M48,50 C50,38 60,30 68,30 C72,30 74,34 74,38" />
+        <path d="M52,102 L52,36 C52,10 76,2 94,2 C112,2 136,10 136,36 L136,102" />
+        <path d="M60,92 L60,42 C60,20 78,14 94,14 C110,14 128,20 128,42 L128,102" />
+        <path d="M68,82 L68,48 C68,30 82,24 94,24 C106,24 120,30 120,48 L120,102" />
+        <path d="M120,30 L170,92 Q176,102 170,108" />
+        <path d="M128,30 L170,82 Q174,90 170,96" />
+        <path d="M136,30 L170,72 Q172,78 170,82" />
+        <path d="M170,30 L120,92 Q114,102 120,108" />
+        <path d="M170,40 L128,92 Q124,98 128,104" />
+        <path d="M170,50 L136,82 Q134,86 136,90" />
+      </g>
+      <text x="200" y="72" fontFamily="'Inter','Helvetica Neue',Arial,sans-serif" fontSize="28" fontWeight={700} letterSpacing="2" fill={color}>DENYX</text>
     </svg>
   );
 }
