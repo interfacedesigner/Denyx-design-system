@@ -162,17 +162,21 @@ AI 위젯 영역의 모든 컴포넌트는 다음 primitive 를 **반드시 comp
 - 새 페이지는 prop 으로 조합. inline 복사·재정의 금지.
 - 페이지 dogfooding 중 발견된 gap 은 본 패키지에 새 컴포넌트로 추가 (페이지 안에서 해결 X)
 
-### 🔒 불변 정책 — 소비자(엔지니어)의 역방향 수정 금지
+### 🔒 불변 정책 — DS repo에서만 수정 가능 · 역방향 수정 금지
 
 > **이 정책은 불변(immutable)입니다. 예외 없음.**
 
-소비자(엔지니어)는 UI 작업 레이어에서 **토큰 · 컴포넌트 · Atom · 위젯을 역으로 수정할 수 없다.**
+모든 토큰 · 컴포넌트 · 위젯의 추가 · 변경 · 삭제는 **본 repo(`Denyx-design-system`)에서만** 수행한다.
 
 - 본 패키지는 **단일 출처(single source of truth)**.
-- 소비 측 — 프로토타입 · 시나리오 · 제품 코드 (`Denyx-AI-Assistant/prototypes/*`, `Denyx_Scenarios/`, 기타 소비 앱) — 은 등록된 토큰·컴포넌트·Atom·위젯을 **prop 조합으로만 소비**한다.
+- 소비 측 — 프로토타입 · 시나리오 · 제품 코드 (`Denyx-AI-Assistant/prototypes/*`, `Denyx_Scenarios/`, 기타 소비 앱) — 은 등록된 토큰·컴포넌트·위젯을 **prop 조합으로만 소비**한다.
 - 소비 레이어에서의 **override · 재정의 · monkey-patch · CSS 덮어쓰기 · 토큰 값 변경** 모두 금지.
-- 토큰 · 컴포넌트 · Atom · 위젯의 추가 · 변경 · 삭제는 **본 repo 작업으로만** 수행.
 - 소비 측 CLAUDE.md 에도 동일 명시.
+
+**위반 감지 및 경고 (2중):**
+
+1. **런타임 UI 경고** — 소비자 앱에서 DS 컴포넌트 override 시도 시 `<DsReadOnlyNotice>` 모달로 불변 정책 안내. 시도된 작업 내용 표시.
+2. **빌드/lint 경고** — 소비자 repo에 `scripts/ds-override-guard.mjs` 설치. DS 토큰·컴포넌트에 대한 CSS override (`!important`, `--color-*` 재정의, DS 클래스명 직접 스타일링) 감지 시 빌드 경고 출력.
 
 ## Sidebar — 프로젝트 스위처 노출 규칙
 
