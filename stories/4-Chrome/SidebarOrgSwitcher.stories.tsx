@@ -28,14 +28,14 @@ type Story = StoryObj<typeof SidebarOrgSwitcher>;
 /** 기본 — 아이콘 + 라벨. */
 export const Default: Story = {
   args: {
-    org: { label: "[조직] Denyx랩스 대관", icon: "denyx-symbol.svg" },
+    org: { label: "[조직] Denyx 대관", icon: "denyx-symbol.svg" },
   },
 };
 
 /** 뱃지 — 엔터프라이즈 컨텍스트 칩. */
 export const WithBadge: Story = {
   args: {
-    org: { label: "[조직] Denyx랩스", icon: "denyx-symbol.svg", badge: "엔터프라이즈" },
+    org: { label: "[조직] Denyx", icon: "denyx-symbol.svg", badge: "엔터프라이즈" },
   },
 };
 

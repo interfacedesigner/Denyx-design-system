@@ -42,7 +42,7 @@ export const WithBreadcrumb: Story = {
       <>
         <Button variant="basic" size="md">← 엔터프라이즈 관리</Button>
         <span className="text-base text-tertiary">
-          / 조직: <span className="text-secondary font-medium">Denyx랩스</span>
+          / 조직: <span className="text-secondary font-medium">Denyx</span>
         </span>
       </>
     ),
