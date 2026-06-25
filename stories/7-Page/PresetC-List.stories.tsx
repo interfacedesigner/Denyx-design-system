@@ -5,7 +5,7 @@ import {
   FilterBar, DataTable, TextField, Chip, Button,
   DenyxAiWidget,
 } from "@denyx/design-system";
-import type { DataTableColumn } from "@denyx/design-system/DataTable";
+import type { DataTableColumn } from "@denyx/design-system";
 
 /**
  * **프리셋 C — 목록 페이지.**
@@ -53,15 +53,15 @@ const SEVERITY_TONE: Record<string, "critical" | "warning" | undefined> = {
 };
 
 const COLUMNS: DataTableColumn<Row>[] = [
-  { key: "no",       header: "No",     width: 52,  numeric: true, render: (r) => r.no },
+  { key: "no",       header: "No",     width: 52,  numeric: true, render: (r: Row) => r.no },
   { key: "title",    header: "이벤트명",  flex: 3 },
   { key: "category", header: "카테고리",  width: 120 },
   { key: "severity", header: "심각도",   width: 96,
-    render: (r) => <Chip size="md" tone={SEVERITY_TONE[r.severity]}>{r.severity}</Chip>,
+    render: (r: Row) => <Chip size="md" tone={SEVERITY_TONE[r.severity]}>{r.severity}</Chip>,
   },
   { key: "project",  header: "프로젝트",  flex: 1.5 },
   { key: "time",     header: "시각",     width: 120,
-    render: (r) => <span className="font-numeric tabular-nums">{r.time}</span>,
+    render: (r: Row) => <span className="font-numeric tabular-nums">{r.time}</span>,
   },
 ];
 

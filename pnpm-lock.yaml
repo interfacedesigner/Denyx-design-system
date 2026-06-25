@@ -29,6 +29,12 @@ importers:
       '@storybook/react-vite':
         specifier: ^10.4.1
         version: 10.4.1(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(esbuild@0.27.7)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(rollup@4.60.4)(storybook@10.4.1(@testing-library/dom@10.4.1)(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(typescript@5.9.3)(vite@6.4.2(@types/node@20.11.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.21.0))
+      '@testing-library/dom':
+        specifier: ^10.4.1
+        version: 10.4.1
+      '@testing-library/react':
+        specifier: ^16.3.2
+        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.15
@@ -47,6 +53,9 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^4.1.7
         version: 4.1.7(@vitest/browser@4.1.7)(vitest@4.1.7)
+      happy-dom:
+        specifier: ^20.10.6
+        version: 20.10.6
       playwright:
         specifier: ^1.60.0
         version: 1.60.0
@@ -70,7 +79,7 @@ importers:
         version: 6.4.2(@types/node@20.11.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.21.0)
       vitest:
         specifier: ^4.1.7
-        version: 4.1.7(@edge-runtime/vm@3.2.0)(@types/node@20.11.0)(@vitest/browser-playwright@4.1.7)(@vitest/coverage-v8@4.1.7)(vite@6.4.2(@types/node@20.11.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.21.0))
+        version: 4.1.7(@edge-runtime/vm@3.2.0)(@types/node@20.11.0)(@vitest/browser-playwright@4.1.7)(@vitest/coverage-v8@4.1.7)(happy-dom@20.10.6)(vite@6.4.2(@types/node@20.11.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.21.0))
 
 packages:
 
@@ -1278,6 +1287,21 @@ packages:
     resolution: {integrity: sha512-zIcONa+hVtVSSep9UT3jZ5rizo2BsxgyDYU7WFD5eICBE7no3881HGeb/QkGfsJs6JTkY1aQhT7rIPC7e+0nnA==}
     engines: {node: '>=14', npm: '>=6', yarn: '>=1'}
 
+  '@testing-library/react@16.3.2':
+    resolution: {integrity: sha512-XU5/SytQM+ykqMnAnvB2umaJNIOsLF3PVv//1Ew4CTcpz0/BRyy/af40qqrt7SjKpDdT1saBMc42CUok5gaw+g==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@testing-library/dom': ^10.0.0
+      '@types/react': ^18.0.0 || ^19.0.0
+      '@types/react-dom': ^18.0.0 || ^19.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+
   '@testing-library/user-event@14.6.1':
     resolution: {integrity: sha512-vq7fv0rnt+QTXgPxr5Hjc210p6YKq2kmdziLgnsZGgLJ9e6VAShx1pACLuRjd/AS/sr7phAR58OIIpf0LlmQNw==}
     engines: {node: '>=12', npm: '>=6'}
@@ -1359,6 +1383,12 @@ packages:
 
   '@types/resolve@1.20.6':
     resolution: {integrity: sha512-A4STmOXPhMUtHH+S6ymgE2GiBSMqf4oTvcQZMcHzokuTLVYzXTB8ttjcgxOVaAp2lGwEdzZ0J+cRbbeevQj1UQ==}
+
+  '@types/whatwg-mimetype@3.0.2':
+    resolution: {integrity: sha512-c2AKvDT8ToxLIOUlN51gTiHXflsfIFisS4pO7pDPoKouJCESkhZnEy623gwP9laCy5lnLDAw1vAzu2vM2YLOrA==}
+
+  '@types/ws@8.18.1':
+    resolution: {integrity: sha512-ThVF6DCVhA8kUGy+aazFQ4kXQ7E1Ty7A3ypFOe0IcJV8O/M511G99AW24irKrW56Wt44yG9+ij8FaqoBGkuBXg==}
 
   '@valibot/to-json-schema@1.7.0':
     resolution: {integrity: sha512-Y3pPVibbIOHzohrlxSINvO7w/bvXkoYS3BQHoImV9ynE+bXKf171bdMucPurV2zp7gdmt0L1HCcNAsbo7cFRQw==}
@@ -1558,6 +1588,10 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
 
+  buffer-image-size@0.6.4:
+    resolution: {integrity: sha512-nEh+kZOPY1w+gcCMobZ6ETUp9WfibndnosbpwB1iJk/8Gt5ZF2bhS6+B6bPYz424KtwsR6Rflc3tCz1/ghX2dQ==}
+    engines: {node: '>=4.0'}
+
   bundle-name@4.1.0:
     resolution: {integrity: sha512-tjwM5exMg6BGRI+kNmTntNsvdZS1X8BFYS6tnJ2hdH0kVxM6/eVZ2xy+FqStSWvYmtfFMDLIxurorHwDKfDz5Q==}
     engines: {node: '>=18'}
@@ -1698,6 +1732,10 @@ packages:
     resolution: {integrity: sha512-YGRs8knHhKHVShLkFET/rWAU8kmHbOV5LwN938RHI0pljAJ1Gf6SzXsSmRaEzcXTtOOmVqJ5+WtQPL5uigY50Q==}
     engines: {node: '>=14'}
 
+  entities@7.0.1:
+    resolution: {integrity: sha512-TWrgLOFUQTH994YUyl1yT4uyavY5nNB5muff+RtWaqNVCAK408b5ZnnbNAUEWLTCpum9w6arT70i1XdQ4UeOPA==}
+    engines: {node: '>=0.12'}
+
   es-errors@1.3.0:
     resolution: {integrity: sha512-Zf5H2Kxt2xjTvbJvP2ZWLEICxA6j+hAmMzIlypy4xcBg1vKVnx89Wy0GbS+kf5cwCVFFzdCFh2XSCFNULS6csw==}
     engines: {node: '>= 0.4'}
@@ -1819,6 +1857,10 @@ packages:
 
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
+
+  happy-dom@20.10.6:
+    resolution: {integrity: sha512-6QD0ilzDDt93tX44y8tbmZdAcdTRYDhUP+Asgi6pC8Pp5IA3cvaZGyoVN/EGtlq9ziT65iPuBBn3ASLr6hCgVw==}
+    engines: {node: '>=20.0.0'}
 
   has-flag@4.0.0:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
@@ -2643,6 +2685,10 @@ packages:
   webpack-virtual-modules@0.6.2:
     resolution: {integrity: sha512-66/V2i5hQanC51vBQKPH4aI8NMAcBW59FVBs+rC7eGHupMyfn34q7rZIE+ETlJ+XTevqfUhVVBgSUNSW2flEUQ==}
 
+  whatwg-mimetype@3.0.0:
+    resolution: {integrity: sha512-nt+N2dzIutVRxARx1nghPKGv1xHikU7HKdfafKkLNLindmPU/ch3U31NOCGGA/dmPcmb1VlofO0vnKAcsm0o/Q==}
+    engines: {node: '>=12'}
+
   whatwg-url@5.0.0:
     resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
 
@@ -3444,7 +3490,7 @@ snapshots:
       '@vitest/browser': 4.1.7(vite@6.4.2(@types/node@20.11.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.21.0))(vitest@4.1.7)
       '@vitest/browser-playwright': 4.1.7(playwright@1.60.0)(vite@6.4.2(@types/node@20.11.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.21.0))(vitest@4.1.7)
       '@vitest/runner': 4.1.7
-      vitest: 4.1.7(@edge-runtime/vm@3.2.0)(@types/node@20.11.0)(@vitest/browser-playwright@4.1.7)(@vitest/coverage-v8@4.1.7)(vite@6.4.2(@types/node@20.11.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.21.0))
+      vitest: 4.1.7(@edge-runtime/vm@3.2.0)(@types/node@20.11.0)(@vitest/browser-playwright@4.1.7)(@vitest/coverage-v8@4.1.7)(happy-dom@20.10.6)(vite@6.4.2(@types/node@20.11.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.21.0))
     transitivePeerDependencies:
       - react
       - react-dom
@@ -3555,6 +3601,16 @@ snapshots:
       picocolors: 1.1.1
       redent: 3.0.0
 
+  '@testing-library/react@16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
+    dependencies:
+      '@babel/runtime': 7.29.7
+      '@testing-library/dom': 10.4.1
+      react: 19.2.6
+      react-dom: 19.2.6(react@19.2.6)
+    optionalDependencies:
+      '@types/react': 19.2.15
+      '@types/react-dom': 19.2.3(@types/react@19.2.15)
+
   '@testing-library/user-event@14.6.1(@testing-library/dom@10.4.1)':
     dependencies:
       '@testing-library/dom': 10.4.1
@@ -3641,6 +3697,12 @@ snapshots:
       csstype: 3.2.3
 
   '@types/resolve@1.20.6': {}
+
+  '@types/whatwg-mimetype@3.0.2': {}
+
+  '@types/ws@8.18.1':
+    dependencies:
+      '@types/node': 20.11.0
 
   '@valibot/to-json-schema@1.7.0(valibot@1.2.0(typescript@5.9.3))':
     dependencies:
@@ -3736,7 +3798,7 @@ snapshots:
       '@vitest/mocker': 4.1.7(vite@6.4.2(@types/node@20.11.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.21.0))
       playwright: 1.60.0
       tinyrainbow: 3.1.0
-      vitest: 4.1.7(@edge-runtime/vm@3.2.0)(@types/node@20.11.0)(@vitest/browser-playwright@4.1.7)(@vitest/coverage-v8@4.1.7)(vite@6.4.2(@types/node@20.11.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.21.0))
+      vitest: 4.1.7(@edge-runtime/vm@3.2.0)(@types/node@20.11.0)(@vitest/browser-playwright@4.1.7)(@vitest/coverage-v8@4.1.7)(happy-dom@20.10.6)(vite@6.4.2(@types/node@20.11.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.21.0))
     transitivePeerDependencies:
       - bufferutil
       - msw
@@ -3752,7 +3814,7 @@ snapshots:
       pngjs: 7.0.0
       sirv: 3.0.2
       tinyrainbow: 3.1.0
-      vitest: 4.1.7(@edge-runtime/vm@3.2.0)(@types/node@20.11.0)(@vitest/browser-playwright@4.1.7)(@vitest/coverage-v8@4.1.7)(vite@6.4.2(@types/node@20.11.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.21.0))
+      vitest: 4.1.7(@edge-runtime/vm@3.2.0)(@types/node@20.11.0)(@vitest/browser-playwright@4.1.7)(@vitest/coverage-v8@4.1.7)(happy-dom@20.10.6)(vite@6.4.2(@types/node@20.11.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.21.0))
       ws: 8.21.0
     transitivePeerDependencies:
       - bufferutil
@@ -3772,7 +3834,7 @@ snapshots:
       obug: 2.1.1
       std-env: 4.1.0
       tinyrainbow: 3.1.0
-      vitest: 4.1.7(@edge-runtime/vm@3.2.0)(@types/node@20.11.0)(@vitest/browser-playwright@4.1.7)(@vitest/coverage-v8@4.1.7)(vite@6.4.2(@types/node@20.11.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.21.0))
+      vitest: 4.1.7(@edge-runtime/vm@3.2.0)(@types/node@20.11.0)(@vitest/browser-playwright@4.1.7)(@vitest/coverage-v8@4.1.7)(happy-dom@20.10.6)(vite@6.4.2(@types/node@20.11.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.21.0))
     optionalDependencies:
       '@vitest/browser': 4.1.7(vite@6.4.2(@types/node@20.11.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.21.0))(vitest@4.1.7)
 
@@ -3925,6 +3987,10 @@ snapshots:
       node-releases: 2.0.46
       update-browserslist-db: 1.2.3(browserslist@4.28.2)
 
+  buffer-image-size@0.6.4:
+    dependencies:
+      '@types/node': 20.11.0
+
   bundle-name@4.1.0:
     dependencies:
       run-applescript: 7.1.0
@@ -4022,6 +4088,8 @@ snapshots:
   electron-to-chromium@1.5.364: {}
 
   empathic@2.0.1: {}
+
+  entities@7.0.1: {}
 
   es-errors@1.3.0: {}
 
@@ -4197,6 +4265,19 @@ snapshots:
       path-scurry: 2.0.2
 
   graceful-fs@4.2.11: {}
+
+  happy-dom@20.10.6:
+    dependencies:
+      '@types/node': 20.11.0
+      '@types/whatwg-mimetype': 3.0.2
+      '@types/ws': 8.18.1
+      buffer-image-size: 0.6.4
+      entities: 7.0.1
+      whatwg-mimetype: 3.0.0
+      ws: 8.21.0
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
 
   has-flag@4.0.0: {}
 
@@ -4913,7 +4994,7 @@ snapshots:
       lightningcss: 1.32.0
       tsx: 4.21.0
 
-  vitest@4.1.7(@edge-runtime/vm@3.2.0)(@types/node@20.11.0)(@vitest/browser-playwright@4.1.7)(@vitest/coverage-v8@4.1.7)(vite@6.4.2(@types/node@20.11.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.21.0)):
+  vitest@4.1.7(@edge-runtime/vm@3.2.0)(@types/node@20.11.0)(@vitest/browser-playwright@4.1.7)(@vitest/coverage-v8@4.1.7)(happy-dom@20.10.6)(vite@6.4.2(@types/node@20.11.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.21.0)):
     dependencies:
       '@vitest/expect': 4.1.7
       '@vitest/mocker': 4.1.7(vite@6.4.2(@types/node@20.11.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.21.0))
@@ -4940,12 +5021,15 @@ snapshots:
       '@types/node': 20.11.0
       '@vitest/browser-playwright': 4.1.7(playwright@1.60.0)(vite@6.4.2(@types/node@20.11.0)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.21.0))(vitest@4.1.7)
       '@vitest/coverage-v8': 4.1.7(@vitest/browser@4.1.7)(vitest@4.1.7)
+      happy-dom: 20.10.6
     transitivePeerDependencies:
       - msw
 
   webidl-conversions@3.0.1: {}
 
   webpack-virtual-modules@0.6.2: {}
+
+  whatwg-mimetype@3.0.0: {}
 
   whatwg-url@5.0.0:
     dependencies:

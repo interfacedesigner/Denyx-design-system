@@ -4,7 +4,7 @@ import {
   DashboardLayout, PageHeader,
   DataTable, Chip, DenyxAiWidget,
 } from "@denyx/design-system";
-import type { DataTableColumn } from "@denyx/design-system/DataTable";
+import type { DataTableColumn } from "@denyx/design-system";
 
 /**
  * **프리셋 A — 기본 대시보드.**
@@ -41,23 +41,23 @@ const STATUS_TONE: Record<string, "warning" | "critical" | undefined> = {
 };
 
 const COLUMNS: DataTableColumn<Row>[] = [
-  { key: "no",     header: "No",       width: 52,  numeric: true, render: (r) => r.no },
+  { key: "no",     header: "No",       width: 52,  numeric: true, render: (r: Row) => r.no },
   { key: "name",   header: "인스턴스",    flex: 2 },
   { key: "tps",    header: "TPS",      width: 96,  numeric: true,
-    render: (r) => (
+    render: (r: Row) => (
       <span className={`font-numeric tabular-nums${r.tps === 0 ? " text-disabled" : ""}`}>
         {r.tps.toLocaleString()}
       </span>
     ),
   },
   { key: "cpu",    header: "CPU %",    width: 96,  numeric: true,
-    render: (r) => <span className="font-numeric tabular-nums">{r.cpu}%</span>,
+    render: (r: Row) => <span className="font-numeric tabular-nums">{r.cpu}%</span>,
   },
   { key: "mem",    header: "MEM %",    width: 96,  numeric: true,
-    render: (r) => <span className="font-numeric tabular-nums">{r.mem}%</span>,
+    render: (r: Row) => <span className="font-numeric tabular-nums">{r.mem}%</span>,
   },
   { key: "status", header: "상태",      width: 96,
-    render: (r) => <Chip size="md" tone={STATUS_TONE[r.status]}>{r.status}</Chip>,
+    render: (r: Row) => <Chip size="md" tone={STATUS_TONE[r.status]}>{r.status}</Chip>,
   },
 ];
 

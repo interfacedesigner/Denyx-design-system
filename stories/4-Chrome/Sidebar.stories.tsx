@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Sidebar } from "@denyx/design-system";
-import type { MenuItem, ProjectContext } from "@denyx/design-system/Sidebar";
+import type { MenuItem, ProjectContext } from "@denyx/design-system";
 
 /**
  * Stories for [[Sidebar]] — Denyx SaaS 좌측 240px 사이드바.

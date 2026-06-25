@@ -5,7 +5,7 @@ import {
   Tabs, MiniLineChart,
   DataTable, DenyxAiWidget,
 } from "@denyx/design-system";
-import type { DataTableColumn } from "@denyx/design-system/DataTable";
+import type { DataTableColumn } from "@denyx/design-system";
 
 /**
  * **프리셋 D — 상세 페이지.**
@@ -43,19 +43,19 @@ const TIME_ROWS: TimeRow[] = [
 
 const TIME_COLS: DataTableColumn<TimeRow>[] = [
   { key: "time", header: "시각",     width: 150,
-    render: (r) => <span className="font-numeric tabular-nums">{r.time}</span>,
+    render: (r: TimeRow) => <span className="font-numeric tabular-nums">{r.time}</span>,
   },
   { key: "cpu",  header: "CPU %",   width: 96, numeric: true,
-    render: (r) => <span className="font-numeric tabular-nums">{r.cpu}%</span>,
+    render: (r: TimeRow) => <span className="font-numeric tabular-nums">{r.cpu}%</span>,
   },
   { key: "mem",  header: "MEM %",   width: 96, numeric: true,
-    render: (r) => <span className="font-numeric tabular-nums">{r.mem}%</span>,
+    render: (r: TimeRow) => <span className="font-numeric tabular-nums">{r.mem}%</span>,
   },
   { key: "tps",  header: "TPS",     width: 96, numeric: true,
-    render: (r) => <span className="font-numeric tabular-nums">{r.tps.toLocaleString()}</span>,
+    render: (r: TimeRow) => <span className="font-numeric tabular-nums">{r.tps.toLocaleString()}</span>,
   },
   { key: "disk", header: "Disk MB/s", width: 96, numeric: true,
-    render: (r) => <span className="font-numeric tabular-nums">{r.disk}</span>,
+    render: (r: TimeRow) => <span className="font-numeric tabular-nums">{r.disk}</span>,
   },
 ];
 

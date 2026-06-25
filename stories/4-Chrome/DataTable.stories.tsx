@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { DataTable } from "@denyx/design-system";
-import type { DataTableColumn } from "@denyx/design-system/DataTable";
+import type { DataTableColumn } from "@denyx/design-system";
 
 /**
  * Stories for [[DataTable]] — 모니터링 페이지의 재활용 generic 데이터 테이블.

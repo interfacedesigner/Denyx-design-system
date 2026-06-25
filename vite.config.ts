@@ -22,6 +22,7 @@ export default defineConfig({
   plugins: [react()],
   test: {
     projects: [
+      // ── Storybook interaction tests (browser mode) ──
       {
         extends: true,
         plugins: [
@@ -41,6 +42,16 @@ export default defineConfig({
               },
             ],
           },
+        },
+      },
+      // ── Unit / render / snapshot tests (happy-dom, fast) ──
+      {
+        extends: true,
+        test: {
+          name: "unit",
+          include: ["src/__tests__/**/*.test.{ts,tsx}"],
+          environment: "happy-dom",
+          css: false,
         },
       },
     ],

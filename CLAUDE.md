@@ -192,6 +192,21 @@ AI 위젯 영역의 모든 컴포넌트는 다음 primitive 를 **반드시 comp
 
 **현재 상태: 안정화 전** — 계층 구조 변경, 심볼 교체, 도메인 컴포넌트 정리 진행 중.
 
+## 회귀 안전망 (Regression Safety Net)
+
+4중 안전망으로 DS 변경 시 기존 소비자가 깨지지 않는지 자동 검증.
+
+| 레이어 | 도구 | 명령어 | 감지 대상 |
+|---|---|---|---|
+| 1. 렌더 테스트 | Vitest | `pnpm test` | 컴포넌트 렌더 에러 |
+| 2. 스냅샷 테스트 | Vitest snapshot | `pnpm test` | 의도치 않은 마크업 변경 |
+| 3. 타입 체크 | TypeScript `tsc --noEmit` | `pnpm typecheck` | export 타입 변경, prop 불일치 |
+| 4. 시각 회귀 | Chromatic | `pnpm chromatic` | 픽셀 수준 UI 변경 |
+
+**통합 검증:** `pnpm check` (typecheck + test)
+
+스냅샷이 의도적 변경이면 `pnpm test -- -u` 로 업데이트.
+
 ## Sidebar — 프로젝트 스위처 노출 규칙
 
 상단 프로젝트/조직 스위처(`productIcon` + `groupLabel` + `projectLabel` + chevron)는 **프로젝트 컨텍스트가 있을 때만 노출**한다.
