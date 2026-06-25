@@ -1,5 +1,3 @@
-// AUTO-GENERATED from tokens.css — do not edit manually. Run: node scripts/generate-tokens.mjs
-
 /**
  * Denyx AI Prototype — Widget Design Tokens.
  *
@@ -86,19 +84,49 @@ export const tokens = {
   color: {
     /** 카드/패널의 배경 — 낮은 채도, 콘텐츠 가독성 보장. */
     surface: {
-      critical: { value: "#ffe8e8", description: "Critical 톤 카드 배경 — 시급한 문제·실패·이상치 메시지 컨테이너." },
-      warning: { value: "#fff7e0", description: "Warning 톤 카드 배경 — 주의·경계가 필요한 메시지." },
-      info: { value: "#e8f4ff", description: "Info 톤 카드 배경 — 안내·정상·정보 전달 메시지." },
-      muted: { value: "#f1f2f4", description: "Muted 톤 카드 배경 — 비활성·idle 컨테이너." },
-      neutral: { value: "#f1f2f4", description: "Neutral 톤 카드 배경 — 강조 없는 기본 placeholder." },
+      critical: {
+        value: "#ffe8e8",
+        description: "Critical 톤 카드 배경 — 시급한 문제·실패·이상치 메시지 컨테이너.",
+      },
+      warning: {
+        value: "#fff7e0",
+        description: "Warning 톤 카드 배경 — 주의·경계가 필요한 메시지.",
+      },
+      info: {
+        value: "#e8f4ff",
+        description: "Info 톤 카드 배경 — 안내·정상·정보 전달 메시지.",
+      },
+      muted: {
+        value: "#f1f2f4",
+        description: "Muted 톤 카드 배경 — 비활성·idle 컨테이너.",
+      },
+      neutral: {
+        value: "#f1f2f4",
+        description: "Neutral 톤 카드 배경 — 강조 없는 기본 placeholder.",
+      },
     },
     /** 도트, 스트로크, 강조 — 높은 채도, 시각 신호. */
     indicator: {
-      critical: { value: "#E53935", description: "Critical 톤 indicator — 위험·이상치 도트/스트로크/차트 강조선." },
-      warning: { value: "#F0B400", description: "Warning 톤 indicator — 경고 도트/스트로크/차트 강조선." },
-      info: { value: "#296CF2", description: "Info 톤 indicator — 정보·안내 도트/스트로크/차트 강조선." },
-      muted: { value: "#757575", description: "Muted 톤 indicator — 비활성 도트/스트로크." },
-      neutral: { value: "#757575", description: "Neutral 톤 indicator — 기본 회색 도트/스트로크." },
+      critical: {
+        value: "#E53935",
+        description: "Critical 톤 indicator — 위험·이상치 도트/스트로크/차트 강조선.",
+      },
+      warning: {
+        value: "#F0B400",
+        description: "Warning 톤 indicator — 경고 도트/스트로크/차트 강조선.",
+      },
+      info: {
+        value: "#296CF2",
+        description: "Info 톤 indicator — 정보·안내 도트/스트로크/차트 강조선.",
+      },
+      muted: {
+        value: "#757575",
+        description: "Muted 톤 indicator — 비활성 도트/스트로크.",
+      },
+      neutral: {
+        value: "#757575",
+        description: "Neutral 톤 indicator — 기본 회색 도트/스트로크.",
+      },
     },
     /**
      * 텍스트 색 hierarchy — 시각적 위계 4 단계.
@@ -107,25 +135,60 @@ export const tokens = {
      * 인라인 hex 리터럴 대신 이 토큰을 참조.
      */
     text: {
-      primary: { value: "#222", description: "본문 default · 헤딩 · 강조 텍스트. 가장 흔한 텍스트 색." },
-      secondary: { value: "#4c4c4c", description: "보조 본문 · dim 텍스트 · sub-section 본문." },
-      tertiary: { value: "#757575", description: "라벨 · 메타 · placeholder · 캡션 부속 정보." },
-      disabled: { value: "#adadad", description: "비활성 상태 텍스트 · 사용 불가 항목 표시." },
+      primary: {
+        value: "#222",
+        description: "본문 default · 헤딩 · 강조 텍스트. 가장 흔한 텍스트 색.",
+      },
+      secondary: {
+        value: "#4c4c4c",
+        description: "보조 본문 · dim 텍스트 · sub-section 본문.",
+      },
+      tertiary: {
+        value: "#757575",
+        description: "라벨 · 메타 · placeholder · 캡션 부속 정보.",
+      },
+      disabled: {
+        value: "#adadad",
+        description: "비활성 상태 텍스트 · 사용 불가 항목 표시.",
+      },
     },
   },
   /** 분류 배지의 기본 한국어 라벨. AiToneBadge 등에서 톤 → 텍스트 매핑. */
   label: {
-    critical: { value: "고활용", description: "Critical 톤 배지의 기본 라벨 — GPU/리소스 분석 시나리오의 고활용군." },
-    warning: { value: "활용", description: "Warning 톤 배지의 기본 라벨 — 보통 수준의 활용군." },
-    info: { value: "저활용", description: "Info 톤 배지의 기본 라벨 — 저활용군 / 최적화 후보." },
-    muted: { value: "완전 유휴", description: "Muted 톤 배지의 기본 라벨 — 완전히 사용되지 않는 자원." },
-    neutral: { value: "", description: "Neutral 톤 — 기본값으로 라벨 표기 없음." },
+    critical: {
+      value: "고활용",
+      description: "Critical 톤 배지의 기본 라벨 — GPU/리소스 분석 시나리오의 고활용군.",
+    },
+    warning: {
+      value: "활용",
+      description: "Warning 톤 배지의 기본 라벨 — 보통 수준의 활용군.",
+    },
+    info: {
+      value: "저활용",
+      description: "Info 톤 배지의 기본 라벨 — 저활용군 / 최적화 후보.",
+    },
+    muted: {
+      value: "완전 유휴",
+      description: "Muted 톤 배지의 기본 라벨 — 완전히 사용되지 않는 자원.",
+    },
+    neutral: {
+      value: "",
+      description: "Neutral 톤 — 기본값으로 라벨 표기 없음.",
+    },
   },
   font: {
     /** 폰트 패밀리 stack — 본문/숫자 역할 분리. */
     family: {
-      korean: { value: "'Noto Sans', 'Noto Sans KR', sans-serif", description: "한국어 본문 — 위젯 카드 내 메시지·라벨·제목. Latin glyph 도 Noto Sans 가 처리." },
-      numeric: { value: "Roboto, 'Noto Sans', sans-serif", description: "숫자·메트릭 — 차트 라벨, 테이블의 numeric 컬럼, 통계 강조 숫자에 사용." },
+      korean: {
+        value: "'Noto Sans', 'Noto Sans KR', sans-serif",
+        description:
+          "한국어 본문 — 위젯 카드 내 메시지·라벨·제목. Latin glyph 도 Noto Sans 가 처리.",
+      },
+      numeric: {
+        value: "Roboto, 'Noto Sans', sans-serif",
+        description:
+          "숫자·메트릭 — 차트 라벨, 테이블의 numeric 컬럼, 통계 강조 숫자에 사용.",
+      },
     },
     /**
      * Type Scale — Hybrid (Dense 1px 정밀 + Display 2배수 인접).
@@ -134,36 +197,96 @@ export const tokens = {
      * Display (16~48px) — 강조·페이지 레벨, 4~16px 간격.
      */
     size: {
-      chart: { value: "9px", description: "SVG 차트 텍스트 (axis label · peak 라벨). 단위 명시 필수." },
-      xs: { value: "10px", description: "DataTable compact 헤더 · AiToneBadge 텍스트 · dim 메타." },
-      sm: { value: "11px", description: "AiCaption (uppercase) · compact 테이블 셀 · sidebar 보조." },
-      base: { value: "12px", description: "본문 default — AiBulletList sm · step label · 옵션바 본문. 가장 흔한 본문 사이즈." },
-      md: { value: "13px", description: "AiSectionHeading · DataTable default · Toast · AiUserBubble · AiBulletList md." },
-      lg: { value: "14px", description: "AiCard 큰 헤더 · LiveTimerCompact digit · DashboardBuildingProgress title." },
-      xl: { value: "16px", description: "Sub-display · marketing 타이틀 보조 사이즈." },
-      "2xl": { value: "20px", description: "PageHeader title — 사실상 페이지 레벨 표준 사이즈." },
-      "3xl": { value: "24px", description: "Stage 슬라이드 헤딩 · marketing 데모 화면 강조 텍스트." },
-      "4xl": { value: "32px", description: "Stage 대형 메시지 · 풀스크린 디스플레이 강조." },
-      "5xl": { value: "48px", description: "Stage 풀스크린 hero · marketing 최대 강조 (rare)." },
+      chart: {
+        value: "9px",
+        description: "SVG 차트 텍스트 (axis label · peak 라벨). 단위 명시 필수.",
+      },
+      xs: {
+        value: "10px",
+        description: "DataTable compact 헤더 · AiToneBadge 텍스트 · dim 메타.",
+      },
+      sm: {
+        value: "11px",
+        description: "AiCaption (uppercase) · compact 테이블 셀 · sidebar 보조.",
+      },
+      base: {
+        value: "12px",
+        description: "본문 default — AiBulletList sm · step label · 옵션바 본문. 가장 흔한 본문 사이즈.",
+      },
+      md: {
+        value: "13px",
+        description: "AiSectionHeading · DataTable default · Toast · AiUserBubble · AiBulletList md.",
+      },
+      lg: {
+        value: "14px",
+        description: "AiCard 큰 헤더 · LiveTimerCompact digit · DashboardBuildingProgress title.",
+      },
+      xl: {
+        value: "16px",
+        description: "Sub-display · marketing 타이틀 보조 사이즈.",
+      },
+      "2xl": {
+        value: "20px",
+        description: "PageHeader title — 사실상 페이지 레벨 표준 사이즈.",
+      },
+      "3xl": {
+        value: "24px",
+        description: "Stage 슬라이드 헤딩 · marketing 데모 화면 강조 텍스트.",
+      },
+      "4xl": {
+        value: "32px",
+        description: "Stage 대형 메시지 · 풀스크린 디스플레이 강조.",
+      },
+      "5xl": {
+        value: "48px",
+        description: "Stage 풀스크린 hero · marketing 최대 강조 (rare).",
+      },
     },
     /**
      * Font Weight — 3 단계. 한국어 본문 가독성 균형.
      */
     weight: {
-      regular: { value: 400, description: "본문 default — 모든 일반 텍스트. 109+ callsite." },
-      medium: { value: 500, description: "강조 — PageHeader title · LIVE 라벨 · AiToneBadge 텍스트." },
-      bold: { value: 700, description: "강한 강조 — AiCaption · AiSectionHeading · metric 숫자." },
+      regular: {
+        value: 400,
+        description: "본문 default — 모든 일반 텍스트. 109+ callsite.",
+      },
+      medium: {
+        value: 500,
+        description: "강조 — PageHeader title · LIVE 라벨 · AiToneBadge 텍스트.",
+      },
+      bold: {
+        value: 700,
+        description: "강한 강조 — AiCaption · AiSectionHeading · metric 숫자.",
+      },
     },
     /**
      * Line-Height — 6 단계. leading-none 이 압도적으로 흔함 (단일 라인 카드/배지).
      */
     lineHeight: {
-      none: { value: 1, description: "leading-none — 단일 라인 (배지 · 헤딩 · 카드 헤더). 175+ callsite, 가장 흔함." },
-      tight: { value: 1.2, description: "매우 압축된 본문 (드문 사용)." },
-      snug: { value: 1.3, description: "compact 테이블 row · 옵션바 본문." },
-      normal: { value: 1.4, description: "default 본문 · 섹션 헤딩 본문. 두 번째로 흔한 라인 하이트." },
-      relaxed: { value: 1.5, description: "AiBulletList small · sub-section 본문." },
-      loose: { value: 1.6, description: "긴 본문 단락 (drop-down 안내 · 도움말 텍스트)." },
+      none: {
+        value: 1.0,
+        description: "leading-none — 단일 라인 (배지 · 헤딩 · 카드 헤더). 175+ callsite, 가장 흔함.",
+      },
+      tight: {
+        value: 1.2,
+        description: "매우 압축된 본문 (드문 사용).",
+      },
+      snug: {
+        value: 1.3,
+        description: "compact 테이블 row · 옵션바 본문.",
+      },
+      normal: {
+        value: 1.4,
+        description: "default 본문 · 섹션 헤딩 본문. 두 번째로 흔한 라인 하이트.",
+      },
+      relaxed: {
+        value: 1.5,
+        description: "AiBulletList small · sub-section 본문.",
+      },
+      loose: {
+        value: 1.6,
+        description: "긴 본문 단락 (drop-down 안내 · 도움말 텍스트).",
+      },
     },
     /**
      * Tracking (Letter-Spacing) — 4 단계.
@@ -172,10 +295,22 @@ export const tokens = {
      * letter-spacing 이 살짝 넓어 한국어가 분리되어 보이는 현상을 보정하기 위함.
      */
     tracking: {
-      display: { value: "-0.3px", description: "대형 페이지 타이틀 (20px+) 의 시각 균형 보정." },
-      metric: { value: "-0.2px", description: "Roboto numeric digit 의 가독성 보정 — LiveTimer 등." },
-      default: { value: "-0.1px", description: "한국어 본문 사실상 표준 — 159+ callsite. 새 본문 텍스트의 기본." },
-      caps: { value: "0.3px", description: "uppercase caption (REASONING / COST ANALYSIS 등) — 가시성 보정." },
+      display: {
+        value: "-0.3px",
+        description: "대형 페이지 타이틀 (20px+) 의 시각 균형 보정.",
+      },
+      metric: {
+        value: "-0.2px",
+        description: "Roboto numeric digit 의 가독성 보정 — LiveTimer 등.",
+      },
+      default: {
+        value: "-0.1px",
+        description: "한국어 본문 사실상 표준 — 159+ callsite. 새 본문 텍스트의 기본.",
+      },
+      caps: {
+        value: "0.3px",
+        description: "uppercase caption (REASONING / COST ANALYSIS 등) — 가시성 보정.",
+      },
     },
     /**
      * Named Typography Patterns — 의도 기반 lookup.

@@ -41,6 +41,19 @@ Primitives ──→ Composite ──→ Shell
 - Component 토큰(3계층)은 variant×tone 조합이 복잡한 것만 선택 도입 (`--wds-btn-*`).
 - `--color-palette-*` (hex suffix) 는 차트 시리즈 전용 Global. 컴포넌트에서 직접 참조 가능 (차트 한정).
 
+### 토큰 단일 출처 파이프라인
+
+```
+src/tokens.css  ─── 유일한 진실 ───→  scripts/generate-tokens.mjs
+                                          ↓
+                                   src/widget/_tokens.ts (자동 생성)
+```
+
+- **`tokens.css`가 유일한 출처.** 토큰 추가·변경·삭제는 이 파일에서만.
+- `_tokens.ts`는 **자동 생성물** — 직접 수정 금지. `node scripts/generate-tokens.mjs` 로 재생성.
+- `pnpm check:tokens` — CI에서 drift 감지 (생성 후 git diff).
+- `storybook` / `build-storybook` 실행 시 자동으로 `generate:tokens` 선행.
+
 ### Primitives — 자립 렌더. DS 컴포넌트를 import 하지 않음
 
 General: Button, Checkbox, Chip, DataTable, LiveTimerCompact, MiniLineChart, Modal, Select, Switch, Tabs, TextField, ThemeToggle, Toast, Tooltip

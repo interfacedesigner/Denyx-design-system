@@ -24,11 +24,13 @@
     "dist"
   ],
   "scripts": {
+    "generate:tokens": "node scripts/generate-tokens.mjs",
+    "check:tokens": "node scripts/generate-tokens.mjs --check",
     "build:design": "node scripts/build-design.mjs",
     "build:js": "tsup",
     "build:lib": "pnpm build:js",
-    "storybook": "node scripts/build-design.mjs && storybook dev -p 5181 --no-open",
-    "build-storybook": "node scripts/build-design.mjs && storybook build",
+    "storybook": "node scripts/generate-tokens.mjs && node scripts/build-design.mjs && storybook dev -p 5181 --no-open",
+    "build-storybook": "node scripts/generate-tokens.mjs && node scripts/build-design.mjs && storybook build",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "check": "pnpm typecheck && pnpm test",

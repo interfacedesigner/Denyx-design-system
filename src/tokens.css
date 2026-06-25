@@ -123,10 +123,29 @@
   --color-text-tertiary: #757575;
   --color-text-disabled: #adadad;
 
-  /* Indicator (Intent) — tokens.color.indicator TS 와 동일값.
-     palette-e53935/f0b400 잔재를 semantic 으로 collapse 하기 위해 추가. */
+  /* AI Surface (Intent) — 카드/패널 배경. 낮은 채도, 콘텐츠 가독성 보장.
+     tokens.color.surface TS 와 동일값. */
+  --color-surface-critical: #ffe8e8;
+  --color-surface-warning: #fff7e0;
+  --color-surface-info: #e8f4ff;
+  --color-surface-muted: #f1f2f4;
+  --color-surface-neutral: #f1f2f4;
+
+  /* Indicator (Intent) — 도트/스트로크/강조. 높은 채도, 시각 신호.
+     tokens.color.indicator TS 와 동일값. */
   --color-indicator-critical: #E53935;
   --color-indicator-warning: #F0B400;
+  --color-indicator-info: #296CF2;
+  --color-indicator-muted: #757575;
+  --color-indicator-neutral: #757575;
+
+  /* Label (Intent) — 분류 배지의 기본 한국어 라벨.
+     tokens.label TS 와 동일값. CSS 에 텍스트 값을 두는 것은 참조 목적. */
+  --label-critical: "고활용";
+  --label-warning: "활용";
+  --label-info: "저활용";
+  --label-muted: "완전 유휴";
+  --label-neutral: "";
 
   /* Extended Gray Scale — text 4 단계 외 UI 회색 (1-5 callsite ad-hoc).
      side-effect 없이 토큰 binding 유지를 위해 정확값 보존. */
@@ -419,4 +438,16 @@ html, body, #root {
   --color-brand-blue-bg: #1C2A46;
   --color-brand-blue-bg-2: #233357;
   --color-brand-blue-deep: #7FB0FF;
+
+  /* AI Surface (Intent) — 다크 모드 배경. 채도 유지 + 밝기 낮춤. */
+  --color-surface-critical: #3A1C1C;
+  --color-surface-warning: #3A3018;
+  --color-surface-info: #1A2A3E;
+  --color-surface-muted: #1B2026;
+  --color-surface-neutral: #1B2026;
+
+  /* Indicator — 다크 모드에서도 동일 (높은 채도 유지) */
+  --color-indicator-info: #5A9AFF;
+  --color-indicator-muted: #8B929C;
+  --color-indicator-neutral: #8B929C;
 }
