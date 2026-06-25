@@ -178,6 +178,20 @@ AI 위젯 영역의 모든 컴포넌트는 다음 primitive 를 **반드시 comp
 1. **런타임 UI 경고** — 소비자 앱에서 DS 컴포넌트 override 시도 시 `<DsReadOnlyNotice>` 모달로 불변 정책 안내. 시도된 작업 내용 표시.
 2. **빌드/lint 경고** — 소비자 repo에 `scripts/ds-override-guard.mjs` 설치. DS 토큰·컴포넌트에 대한 CSS override (`!important`, `--color-*` 재정의, DS 클래스명 직접 스타일링) 감지 시 빌드 경고 출력.
 
+## 안정화 체크리스트 — npm 퍼블리시 전 게이트
+
+안정화 = 소비자가 업데이트 없이 안정적으로 사용할 수 있는 상태. 아래 항목을 **모두 충족**해야 npm 퍼블리시 진행.
+
+- [ ] 컴포넌트 prop(이름·타입·필수 여부) 변경 빈도 < 주 1회 (2주 이상 유지)
+- [ ] 토큰 값(`tokens.css` `:root` 변수) 변경 없이 2주 이상 유지
+- [ ] 컴포넌트 추가·삭제·리네이밍 없이 2주 이상 유지
+- [ ] dogfooding 프로젝트에서 DS override 0건 (ds-override-guard 통과)
+- [ ] Storybook 전 컴포넌트 story + autodocs 완비
+- [ ] `tsup` 빌드 산출물(dist/) 안정 출력 — 소비자가 번들 import 가능
+- [ ] 소비자 2개 이상 프로젝트에서 DS 변경 없이 정상 동작 확인
+
+**현재 상태: 안정화 전** — 계층 구조 변경, 심볼 교체, 도메인 컴포넌트 정리 진행 중.
+
 ## Sidebar — 프로젝트 스위처 노출 규칙
 
 상단 프로젝트/조직 스위처(`productIcon` + `groupLabel` + `projectLabel` + chevron)는 **프로젝트 컨텍스트가 있을 때만 노출**한다.
