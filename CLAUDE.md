@@ -5,7 +5,7 @@
 ## 디렉토리 구성
 
 - `src/` — 컴포넌트 소스 + `tokens.css` + `widget/` (AI 컴포넌트)
-- `stories/` — Storybook 카탈로그 (Foundation / Tokens / Primitives / Composite / Shell / Page)
+- `stories/` — Storybook 카탈로그 (Foundation / Tokens / Primitives / Composite / Shell)
 - `docs/` — markdown 카탈로그 (단일 출처 문서)
   - `SKILL.md` — 본 디자인 시스템 사용 절차
   - `primitives.md` / `chrome-components.md` / `widget-components.md` — 컴포넌트 카탈로그 (텍스트 형태)
