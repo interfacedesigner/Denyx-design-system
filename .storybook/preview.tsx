@@ -9,7 +9,7 @@ import '../src/denyx-ds.css';
  *
  * - layout: 'centered' — 대시보드 chrome 같이 큰 컴포넌트는 개별 story 에서 'fullscreen' 으로 override.
  * - backgrounds: light(#fff) / surface-muted(#f5f5f5) / dark(#1a1a1a). prototype 에 자주 등장하는 배경 3종.
- * - storySort: 카탈로그 좌측 트리 ordering — Introduction → Foundation → Tokens → Primitives → Composite → Shell → Page. 단일 Design Theory 계층(Primitives→Composite→Shell).
+ * - storySort: 카탈로그 좌측 트리 ordering — Introduction → For Designers → Foundation → Tokens → Primitives → Composite → Shell. 단일 Design Theory 계층(Primitives→Composite→Shell).
  */
 const preview: Preview = {
   parameters: {
@@ -46,7 +46,6 @@ const preview: Preview = {
           'Primitives',
           'Composite',
           'Shell',
-          'Page',
         ],
       },
     },
