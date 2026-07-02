@@ -26,6 +26,8 @@
   "scripts": {
     "generate:tokens": "node scripts/generate-tokens.mjs",
     "check:tokens": "node scripts/generate-tokens.mjs --check",
+    "audit:tokens": "node scripts/audit-tokens.mjs",
+    "lint:src": "node scripts/lint-src-tokens.mjs",
     "build:design": "node scripts/build-design.mjs",
     "build:js": "tsup",
     "build:lib": "pnpm build:js",
@@ -33,7 +35,7 @@
     "build-storybook": "node scripts/generate-tokens.mjs && node scripts/build-design.mjs && storybook build",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "check": "pnpm typecheck && pnpm test",
+    "check": "pnpm typecheck && pnpm lint:src && pnpm test",
     "chromatic": "npx chromatic --exit-zero-on-changes"
   },
   "peerDependencies": {

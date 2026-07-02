@@ -1,0 +1,99 @@
+{
+  "src/AiSymbol.tsx": {
+    "raw-color": 2
+  },
+  "src/AiWidget.tsx": {
+    "raw-shadow": 2
+  },
+  "src/Button.tsx": {
+    "raw-color": 5
+  },
+  "src/Chip.tsx": {
+    "raw-color": 6,
+    "raw-spacing": 3
+  },
+  "src/DashboardBuildingProgress.tsx": {
+    "raw-color": 2,
+    "raw-radius": 1
+  },
+  "src/DenyxAiWidget.tsx": {
+    "raw-color": 4
+  },
+  "src/DsReadOnlyNotice.tsx": {
+    "raw-color": 7,
+    "raw-font": 7,
+    "raw-radius": 4,
+    "raw-shadow": 1,
+    "raw-spacing": 7
+  },
+  "src/FilterChip.tsx": {
+    "raw-color": 1,
+    "raw-spacing": 3
+  },
+  "src/FilterDropdown.tsx": {
+    "raw-radius": 1,
+    "raw-shadow": 1
+  },
+  "src/LiveTimerCompact.tsx": {
+    "raw-color": 6,
+    "raw-spacing": 1
+  },
+  "src/MiniLineChart.tsx": {
+    "raw-color": 1,
+    "raw-spacing": 1
+  },
+  "src/Modal.tsx": {
+    "raw-color": 1,
+    "raw-radius": 1,
+    "raw-shadow": 1,
+    "raw-spacing": 1
+  },
+  "src/OptionbarInstanceSelector.tsx": {
+    "raw-color": 1
+  },
+  "src/Select.tsx": {
+    "raw-spacing": 3
+  },
+  "src/Stage.tsx": {
+    "raw-color": 2
+  },
+  "src/Tabs.tsx": {
+    "raw-spacing": 3
+  },
+  "src/TextField.tsx": {
+    "raw-spacing": 3
+  },
+  "src/TimeRangeSelector.tsx": {
+    "raw-color": 2
+  },
+  "src/Toast.tsx": {
+    "raw-color": 6,
+    "raw-shadow": 1
+  },
+  "src/Tooltip.tsx": {
+    "raw-radius": 1,
+    "raw-shadow": 1
+  },
+  "src/WeekHourMatrix.tsx": {
+    "raw-color": 4,
+    "raw-spacing": 2
+  },
+  "src/widget/AiClickCursor.tsx": {
+    "raw-color": 1
+  },
+  "src/widget/AiInlinePrompt.tsx": {
+    "raw-shadow": 1
+  },
+  "src/widget/AiMessageActions.tsx": {
+    "raw-color": 2
+  },
+  "src/widget/AiOptionButton.tsx": {
+    "raw-color": 1
+  },
+  "src/widget/AiSendButton.tsx": {
+    "raw-color": 1
+  },
+  "src/widget/AiUsageChart.tsx": {
+    "raw-color": 1
+  }
+}

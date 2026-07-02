@@ -11,6 +11,10 @@ Denyx SaaS 의 단일 컴포넌트·토큰 출처. **Primitives · Chrome · AI 
 pnpm install
 pnpm storybook          # http://localhost:5181 (dev) — MCP 엔드포인트 포함
 pnpm build-storybook    # 정적 빌드 (DESIGN.md 합본 자동 생성)
+
+pnpm check              # 통합 검증 (typecheck + lint:src + test)
+pnpm audit:tokens       # 토큰 적용률/빈도 실측 감사 (--json 지원)
+pnpm lint:src           # DS 소스 raw 값 가드 (baseline ratchet — 신규 유입만 실패)
 ```
 
 ## 소비 (다른 앱/프로토타입에서 사용)
@@ -25,6 +29,13 @@ import "@denyx/design-system/tokens.css";   // import 만으로 전 토큰 :root
 ```
 
 단일 출처 원칙: 인라인 색 리터럴 금지(토큰 사용), 컴포넌트 inline 재구현 금지(prop 조합). 자세한 정책은 `CLAUDE.md`.
+
+## 토큰
+
+- **2계층** — Global(팔레트·스케일: `--color-gray-50`, `--spacing-md`) / Semantic(의미: `--color-text-primary`). 컴포넌트는 Semantic만 참조.
+- **Layout Scale** (2026-07 신설) — Spacing 9단계(2~32px) · Radius 7단계(2~24px/full) · Shadow 3단계. `pnpm audit:tokens` 실측 빈도 기반.
+- **거버넌스** — 3곳 이상 반복 값만 토큰화 · 변경은 영향 분석 + 시각 회귀 · 삭제는 2주 deprecation. 상세: [`docs/tokens.md`](./docs/tokens.md).
+- **파이프라인** — `tokens.css`(유일 출처) → `scripts/generate-tokens.mjs` → `_tokens.ts` 자동 생성. drift는 `pnpm check:tokens` 감지.
 
 ## 🤖 AI 연동 — 본인 AI에 디자인 시스템 연결
 
