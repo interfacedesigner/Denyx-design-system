@@ -56,6 +56,12 @@
   --gradient-brand: linear-gradient(90deg, var(--color-brand-blue), var(--color-denyx-purple));
   --radius-full: 9999px;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.25);
+
+  /* Elevation scale — 정보 표면의 층위 구분 (다크 값은 .dark 에서 재매핑).
+     card: 기본 카드(정지 표면) · raised: hover/강조(부양) · overlay: 드로어/모달/플로팅 */
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-raised: 0 2px 4px rgba(0, 0, 0, 0.05), 0 8px 20px rgba(0, 0, 0, 0.09);
+  --shadow-overlay: 0 2px 8px rgba(0, 0, 0, 0.08), 0 16px 40px rgba(0, 0, 0, 0.18);
   --color-white: #fff;
 
   /* ──────────────────────────────────────────────────────────────────────
@@ -163,6 +169,7 @@
      tokens.color.surface TS 와 동일값. */
   --color-surface-critical: #ffe8e8;
   --color-surface-warning: #fff7e0;
+  --color-surface-success: #e8f8ee;
   --color-surface-info: #e8f4ff;
   --color-surface-muted: #f1f2f4;
   --color-surface-neutral: #f1f2f4;
@@ -475,9 +482,15 @@ html, body, #root {
   --color-brand-blue-bg-2: #233357;
   --color-brand-blue-deep: #7FB0FF;
 
+  /* Elevation — 다크 표면은 더 짙은 그림자로 층위 유지 */
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-raised: 0 2px 4px rgba(0, 0, 0, 0.35), 0 8px 20px rgba(0, 0, 0, 0.45);
+  --shadow-overlay: 0 2px 8px rgba(0, 0, 0, 0.45), 0 16px 40px rgba(0, 0, 0, 0.6);
+
   /* AI Surface (Intent) — 다크 모드 배경. 채도 유지 + 밝기 낮춤. */
   --color-surface-critical: #3A1C1C;
   --color-surface-warning: #3A3018;
+  --color-surface-success: #1C3A26;
   --color-surface-info: #1A2A3E;
   --color-surface-muted: #1B2026;
   --color-surface-neutral: #1B2026;

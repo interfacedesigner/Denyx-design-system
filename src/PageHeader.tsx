@@ -15,9 +15,11 @@
  * - 시간/프리셋 등 데이터 필터 옵션 → `OptionbarPage` / `FilterBar`.
  *
  * ## Composition rules
- * - 공통 정책(feedback-page-header-invariant): Denyx AI 위젯 토글과 무관하게 항상
- *   동일한 레이아웃·가시 요소·크기로 렌더. 내부 항목을 숨기거나 줄이는 prop 은
- *   의도적으로 제공하지 않음.
+ * - 공통 정책(feedback-page-header-invariant): Denyx AI 위젯 토글의 활성 "상태"와 무관하게
+ *   항상 동일한 레이아웃·가시 요소·크기로 렌더.
+ *   예외: Denyx AI 를 탑재하지 않는 콘솔(외부 어드민 등)은 `hideAiToggle` 로 AI 토글만
+ *   숨길 수 있음 (Sidebar 의 `hideProjectSwitcher` 전례 — 컨텍스트 부재 시 미노출 원칙).
+ *   기본 false 로 기존 호출처 동작 불변.
  * - Denyx AI 토글은 인라인 마크업이 아니라 [[AiAssistantButton]] 채택 (토큰 binding dogfooding).
  * - 높이 48px 고정(`box-border`) — 페이지에서 inline `<div>` 로 재구현 금지.
  * - 배경/경계/텍스트 색은 토큰 (`--color-border-strong` · `--color-text-*` · `--color-brand-blue-bg`).
@@ -52,22 +54,31 @@ export default function PageHeader({
   profileMenu,
   roleBadge,
   notifications,
+  hideAiToggle = false,
+  paddingX = 8,
 }: {
   title: string;
   aiActive?: boolean;
   onAiToggle?: () => void;
+  /** Denyx AI 토글 숨김 — AI 위젯을 탑재하지 않는 콘솔용. 기본 false (기존 동작 불변). */
+  hideAiToggle?: boolean;
   /** 우상단 아바타 클릭 시 드롭다운 메뉴(예: 엔터프라이즈 관리). 미지정이면 정적 아바타. */
   profileMenu?: ProfileMenuItem[];
   /** 프로필(아바타) 드롭다운 헤더에 표시할 역할(예: "OWNER"). 미지정이면 헤더 숨김. */
   roleBadge?: string;
   /** 알림(벨) 드롭다운. 1건 이상이면 벨에 빨간 점 표시 + 클릭 시 목록. */
   notifications?: NotificationItem[];
+  /** 좌우 패딩(px) — 본문 콘텐츠 패딩과 정렬용. 기본 8 (기존 동작 불변). */
+  paddingX?: number;
 }) {
   const [profileOpen, setProfileOpen] = useState(false);
   const [notifyOpen, setNotifyOpen] = useState(false);
   const hasNotify = !!notifications && notifications.length > 0;
   return (
-    <div className="flex items-center justify-between h-48px box-border px-8px bg-card border-b border-color-var-color-border-strong shrink-0">
+    <div
+      className="flex items-center justify-between h-48px box-border bg-card border-b border-color-var-color-border-strong shrink-0"
+      style={{ paddingLeft: paddingX, paddingRight: paddingX }}
+    >
       {/* 좌측: 타이틀 + AI/Docs */}
       <div className="flex items-center gap-24px shrink-0">
         <p
@@ -80,7 +91,7 @@ export default function PageHeader({
           {title}
         </p>
         <div className="flex items-center gap-8px">
-          <AiAssistantButton aiActive={aiActive} onClick={onAiToggle} />
+          {!hideAiToggle && <AiAssistantButton aiActive={aiActive} onClick={onAiToggle} />}
           <HeaderPillButton icon={<IcDocs />}>Docs</HeaderPillButton>
         </div>
       </div>

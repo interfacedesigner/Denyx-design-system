@@ -395,6 +395,25 @@ export type DataTableProps<T> = {
 
 ---
 
+## TopologyGraph (+ TopologyStageNode / TopologyEdge)
+
+선형 파이프라인 토폴로지 — 단계별 체류/실패 건수를 노드로, 단계 간 흐름을 화살표 엣지로 표시. 실패 노드는 `--color-surface-critical` 서피스로 자동 강조.
+
+- **TopologyStageNode** (Primitive · Parts): 라벨 + 체류 건수 + 실패 건수 노드 카드. `onClick` 지정 시 button 렌더.
+- **TopologyEdge** (Primitive · Parts): 노드 사이 수평 화살표 연결선 + 선택적 라벨.
+- **TopologyGraph** (Composite): 위 두 Primitive 를 1단계 조합. 데이터(`stages`)만 주입, 클릭 라우팅은 `onStageClick(key)` 위임.
+
+| Prop (TopologyGraph) | Type | Default |
+|---|---|---|
+| `stages` | `TopologyGraphStage[]` | — |
+| `onStageClick` | `(key: string) => void` | — |
+
+`TopologyGraphStage`: `key` · `label` · `count` · `failedCount?` · `tone?` (`neutral/info/success/critical`) · `edgeLabel?`
+
+비선형 네트워크 그래프 아님 — 좌→우 선형 흐름 전용. 단건 진행 이력은 `TimelineStepItem` 사용.
+
+---
+
 ## Toast
 
 상단 중앙 고정 알림 (자동 dismiss). React Portal 사용.
