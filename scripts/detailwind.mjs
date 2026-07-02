@@ -352,6 +352,13 @@ const EXTRAS = [
   ".bg-surface-200 { background-color: var(--color-surface-200); }",
   ".hover-bg-surface-100:hover { background-color: var(--color-surface-100); }",
   ".hover-bg-surface-200:hover { background-color: var(--color-surface-200); }",
+  // Layout Scale Tokens 유틸 (2026-07-02, DS-ENHANCEMENT-PLAN §2.1~2.3)
+  ".rounded-xs { border-radius: var(--radius-xs); }",
+  ".rounded-sm { border-radius: var(--radius-sm); }",
+  ".rounded-2xl { border-radius: var(--radius-2xl); }",
+  ".shadow-sm { box-shadow: var(--shadow-sm); }",
+  ".shadow-md { box-shadow: var(--shadow-md); }",
+  ".shadow-lg { box-shadow: var(--shadow-lg); }",
 ];
 for (const e of EXTRAS) if (!cssLines.includes(e)) cssLines.push(e);
 

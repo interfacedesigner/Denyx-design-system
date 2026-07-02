@@ -136,6 +136,86 @@ tokens.color.text.disabled.value   // #adadad — 비활성 상태 텍스트 (6 
 
 본문이 압도적으로 흔하므로 `primary` 가 다른 색을 합친 것보다 많이 쓰임 — 위계 4 단계로 충분.
 
+## Layout Scale — Spacing · Radius · Shadow (Global tier)
+
+2026-07-02 신설 (`docs/DS-ENHANCEMENT-PLAN.md` §2.1~2.3). `pnpm audit:tokens` 실측 빈도 기반.
+기존 유틸 클래스(`gap-6px`·`rounded-4px` 등)는 값 유지(비파괴) — **신규 컴포넌트의 인라인 스타일부터 토큰 참조**.
+
+### Spacing — 9 단계
+
+| 토큰 | 값 | 실측 빈도 |
+|---|---:|---:|
+| `--spacing-2xs` | 2px | ×20 |
+| `--spacing-xs` | 4px | ×49 |
+| `--spacing-sm` | 6px | ×57 ⭐ |
+| `--spacing-md` | 8px | ×54 |
+| `--spacing-lg` | 12px | ×16 |
+| `--spacing-xl` | 16px | ×23 |
+| `--spacing-2xl` | 20px | — |
+| `--spacing-3xl` | 24px | — |
+| `--spacing-4xl` | 32px | — |
+
+10px(×11)·14px(×5)는 스케일 외 실측값 — 기존 유틸은 유지하되 신규 사용 시 인접 스케일 우선.
+
+### Radius — 6 단계 + full
+
+| 토큰 | 값 | 용도 |
+|---|---:|---|
+| `--radius-xs` | 2px | 마이크로 요소 (인디케이터·미니 칩) |
+| `--radius-sm` | 4px | 버튼·칩·입력 등 기본 컨트롤 ⭐ (×22) |
+| `--radius-md` | 6px | 카드 내부 블록 (구 `0.375rem` 과 동치) |
+| `--radius-lg` | 8px | 카드·패널·드롭다운 (구 `0.5rem` 과 동치) |
+| `--radius-xl` | 12px | 대형 패널 (구 `0.75rem` 과 동치) |
+| `--radius-2xl` | 24px | 위젯 셸·풀 라운드 컨테이너 |
+| `--radius-full` | 9999px | pill·원형 |
+
+3px 등 스케일 사이 미세값은 토큰화하지 않음 — allowlist (거버넌스 §3.3 참조).
+
+### Shadow / Elevation — 3 단계
+
+| 토큰 | 값 | 용도 |
+|---|---|---|
+| `--shadow-sm` | `0 1px 3px rgba(0,0,0,0.25)` | 컨트롤 (Switch thumb 등) |
+| `--shadow-md` | `0 4px 16px rgba(0,0,0,0.12)` | 드롭다운·팝오버·토스트 |
+| `--shadow-lg` | `0 8px 24px rgba(0,0,0,0.12)` | 모달·다이얼로그 |
+
+유틸: `rounded-xs/sm/md/lg/xl/2xl/full` · `shadow-sm/md/lg` (denyx-ds.css). 인라인은 `var(--radius-*)` / `var(--shadow-*)`.
+
+## 토큰 거버넌스
+
+토큰 추가·수정·삭제의 명문화된 절차 (DS-ENHANCEMENT-PLAN §3). 기존 🔒 불변 정책(DS repo에서만 수정)의 보강 레이어.
+
+### 변경 프로세스
+
+| 작업 | 절차 |
+|---|---|
+| **추가** | 실사용 **3곳 이상** 근거 (grep 결과 첨부) + 계층(Global/Semantic) 명시 + 본 문서 동기 |
+| **수정** | 영향 범위 분석 (`grep` 전체 참조처) 첨부 + 시각 회귀(Chromatic) 확인 |
+| **삭제** | 최소 2주 deprecation — 주석 `/* @deprecated → 대체토큰 */` 유지 후 제거 |
+
+### 토큰화 기준
+
+- **3곳 이상** 반복되는 값만 토큰화. 1~2회 값은 raw 허용 (스케일 오염 방지).
+- 신규 토큰은 Semantic 우선 — Global 스케일 확장은 스케일 갭이 실측(`pnpm audit:tokens`)으로 증명될 때만.
+
+### 허용 Raw 값 (Allowlist) — `pnpm lint:src` 예외
+
+| 패턴 | 사유 |
+|---|---|
+| `0`, `"0 auto"`, `%`, `100vh/vw` | 제로·레이아웃 값 |
+| `1px` 헤어라인 | 마이크로 조정 |
+| 방향별 개별 라디우스 (`"20px 20px 0 0"`) | 조합 값 |
+| 차트 palette (`--color-palette-*` 참조) | 시리즈 전용 Global (기존 정책) |
+| 컬러 배경 위 `#fff` 전경 | 테마 무관 (기존 정책) |
+| 라이브 번들 추출 CSS (`.ai-assistant-btn` 등) | 픽셀 일치 정책 (기존 정책) |
+
+### 도구
+
+| 명령 | 역할 |
+|---|---|
+| `pnpm audit:tokens` | 카테고리별 토큰 적용률 + raw 값 빈도 측정 (`--json` 지원) |
+| `pnpm lint:src` | DS 소스 raw 값 유입 가드 — baseline(`scripts/lint-src-tokens-baseline.json`) 초과분만 실패. `pnpm check`에 포함 |
+
 ## 색상 — 토큰 외 hard-coded
 
 토큰화되지 않은 색상은 거의 모두 chrome / 카드 외형에 한정됩니다. 자주 등장하는 것:

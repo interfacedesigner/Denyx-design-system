@@ -54,6 +54,29 @@ src/tokens.css  ─── 유일한 진실 ───→  scripts/generate-tokens
 - `pnpm check:tokens` — CI에서 drift 감지 (생성 후 git diff).
 - `storybook` / `build-storybook` 실행 시 자동으로 `generate:tokens` 선행.
 
+### Layout Scale 토큰 (Global) — Spacing · Radius · Shadow
+
+`--spacing-2xs~4xl`(2~32px) · `--radius-xs~2xl/full`(2~24px) · `--shadow-sm/md/lg`. `pnpm audit:tokens` 실측 빈도 기반 (2026-07-02 신설, `docs/DS-ENHANCEMENT-PLAN.md`). 기존 유틸(`gap-6px`·`rounded-4px`)은 값 유지(비파괴) — **신규 컴포넌트의 인라인 스타일부터 토큰 참조**. 상세는 `docs/tokens.md`.
+
+### 토큰 거버넌스 — 변경 프로세스 (2026-07-02 신설)
+
+| 작업 | 절차 |
+|---|---|
+| **추가** | 실사용 **3곳 이상** 근거 (grep 첨부) + 계층(Global/Semantic) 명시 + `tokens.md` 동기 |
+| **수정** | 영향 범위 분석 (전체 참조처 grep) + 시각 회귀(Chromatic) 확인 |
+| **삭제** | 최소 2주 deprecation (`/* @deprecated → 대체토큰 */`) 후 제거 |
+
+- **3곳 이상** 반복 값만 토큰화 (1~2회는 raw 허용 — 스케일 오염 방지). Global 스케일 확장은 실측(`pnpm audit:tokens`)으로 갭이 증명될 때만.
+- 허용 raw 값 allowlist (0 · 1px 헤어라인 · 방향별 조합 라디우스 · 컬러 위 `#fff` 전경 · 라이브 번들 CSS 등)는 `docs/tokens.md` § 토큰 거버넌스 참조.
+
+### 소스 내부 raw 값 가드 — `pnpm lint:src` (2026-07-02 신설)
+
+`ds-override-guard.mjs`(소비자 방향)와 별개로, **DS 소스 자체**의 inline hex·raw px 유입을 차단하는 내부 가드 (`scripts/lint-src-tokens.mjs`).
+
+- 규칙 5종: raw-color / raw-font / raw-radius / raw-shadow / raw-spacing (inline style 대상 — 유틸 클래스는 denyx-ds.css 소유라 제외)
+- 기존 위반은 `scripts/lint-src-tokens-baseline.json`에 동결 — **baseline 초과(신규 유입)만 실패** (비파괴 ratchet). 위반을 줄였으면 `--update`.
+- `pnpm check`에 포함. 적용률 측정은 `pnpm audit:tokens`(`--json` 지원).
+
 ### Primitives — 자립 렌더. DS 컴포넌트를 import 하지 않음
 
 General: Button, Checkbox, Chip, DataTable, LiveTimerCompact, MiniLineChart, Modal, Select, Switch, Tabs, TextField, ThemeToggle, Toast, Tooltip
@@ -216,7 +239,7 @@ AI 위젯 영역의 모든 컴포넌트는 다음 primitive 를 **반드시 comp
 | 3. 타입 체크 | TypeScript `tsc --noEmit` | `pnpm typecheck` | export 타입 변경, prop 불일치 |
 | 4. 시각 회귀 | Chromatic | `pnpm chromatic` | 픽셀 수준 UI 변경 |
 
-**통합 검증:** `pnpm check` (typecheck + test)
+**통합 검증:** `pnpm check` (typecheck + lint:src + test)
 
 스냅샷이 의도적 변경이면 `pnpm test -- -u` 로 업데이트.
 
