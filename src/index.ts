@@ -70,6 +70,10 @@ export { default as SubHeaderBar } from "./SubHeaderBar";
 export type { SubHeaderBarProps } from "./SubHeaderBar";
 export { default as TabButton } from "./TabButton";
 export { default as TimeRangeSelector } from "./TimeRangeSelector";
+export { default as TopologyStageNode } from "./TopologyStageNode";
+export type { TopologyStageNodeProps, TopologyStageTone } from "./TopologyStageNode";
+export { default as TopologyEdge } from "./TopologyEdge";
+export type { TopologyEdgeProps } from "./TopologyEdge";
 //   Parts (AI)
 export { default as AiQuickActionChip } from "./AiQuickActionChip";
 export { default as AiActionChip } from "./widget/AiActionChip";
@@ -98,6 +102,8 @@ export { default as PageHeaderAiInline } from "./PageHeaderAiInline";
 export type { PageHeaderAiInlineProps } from "./PageHeaderAiInline";
 export { default as Sidebar } from "./Sidebar";
 export type { MenuItem, ProjectContext, OrgContext } from "./Sidebar";
+export { default as TopologyGraph } from "./TopologyGraph";
+export type { TopologyGraphProps, TopologyGraphStage } from "./TopologyGraph";
 
 // ─── Shell — 모든 계층 조합. 앱 진입점 ────────────────────────────────
 export { default as DashboardLayout } from "./DashboardLayout";
