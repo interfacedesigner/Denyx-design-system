@@ -36,7 +36,7 @@ export default function TopologyEdge({ label }: TopologyEdgeProps) {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        gap: 2,
+        gap: "var(--spacing-2xs)",
         alignSelf: "center",
       }}
       aria-hidden="true"

@@ -68,10 +68,10 @@ export default function TopologyStageNode({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    gap: 2,
+    gap: "var(--spacing-2xs)",
     minWidth: 104,
     padding: "10px 14px",
-    borderRadius: 8,
+    borderRadius: "var(--radius-lg)",
     border: `1px solid ${hasFailure ? "var(--color-status-error)" : "var(--color-border-default)"}`,
     background: hasFailure ? "var(--color-surface-critical)" : "var(--color-card)",
     cursor: onClick ? "pointer" : "default",
@@ -87,7 +87,7 @@ export default function TopologyStageNode({
         style={{ color: COUNT_COLOR[resolvedTone] }}
       >
         {count}
-        <span className="text-sm font-medium" style={{ color: "var(--color-text-tertiary)", marginLeft: 2 }}>
+        <span className="text-sm font-medium" style={{ color: "var(--color-text-tertiary)", marginLeft: "var(--spacing-2xs)" }}>
           {unit}
         </span>
       </span>
